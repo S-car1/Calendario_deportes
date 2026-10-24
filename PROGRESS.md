@@ -1,14 +1,14 @@
 # Progreso de investigación
 
-Estado: investigación inicial en curso (agentes lanzados en paralelo) — 2026-10-24.
+Estado: **investigación inicial completa** — 2026-10-24. Las 4 áreas (fútbol, básquet, combate/rugby, streaming Chile) están listas. Falta tu validación de las listas de jugadores y luego pasamos a construir.
 
 Ver [PLAN.md](PLAN.md) para la arquitectura y el alcance acordado.
 
 ## Áreas en investigación
 
-- [ ] Fútbol: APIs de fixtures gratuitas + roster actual de chilenos en el extranjero (agente en curso)
-- [ ] Básquet: APIs de fixtures (NBA/Euroliga/LNB) + equipos actuales de Sebastián Herrera y Sebastián Carrasco (agente en curso)
-- [ ] Combate (UFC/One Championship) y Rugby (Cóndores/tier 1-2): fuentes oficiales, viabilidad de scraping (agente en curso)
+- [x] Fútbol: APIs de fixtures gratuitas + roster actual de chilenos en el extranjero (ver sección abajo, 2026-10-24)
+- [x] Básquet: APIs de fixtures (NBA/Euroliga/LNB) + equipos actuales de Sebastián Herrera y Sebastián Carrasco (ver sección abajo, 2026-10-24)
+- [x] Combate (UFC/One Championship) y Rugby (Cóndores/tier 1-2): fuentes oficiales, viabilidad de scraping (ver sección abajo, 2026-10-24)
 - [x] Streaming en Chile: qué plataforma transmite cada liga/torneo/evento (ver tabla abajo, 2026-10-24)
 
 Esta sección se va completando a medida que cada investigación termina.
@@ -35,8 +35,96 @@ Esta sección se va completando a medida que cada investigación termina.
 - **LaLiga/Premier/Ligue1 mapeo exacto**: no se pudo confirmar una tabla fija liga→señal. Lo que sí: ESPN tiene Premier League asegurada en Latam hasta 2030-31 (renovación feb 2026) y LaLiga de forma no exclusiva hasta 2026 (ojo, vence este año, revisar qué pasa después). Ligue 1 sin dato. Conclusión: esta fila va a necesitar resolución partido a partido (vía API o guía de TV), no una regla fija simple.
 - **One Championship en Chile**: Claro Sports tiene los derechos para toda Latam excepto Brasil (donde es Globo/Combate). No se confirmó specific channel/app en Chile, pero lo más probable es que sea a través de Claro Sports (canal/app ClaroSports). Falta confirmar si requiere ser cliente Claro o es con cuenta gratuita en clarosports.com.
 
+## Básquet — APIs de fixtures y chilenos en el extranjero (investigado 2026-10-24)
+
+| API | Cobertura útil | Límite gratis | Auth |
+|---|---|---|---|
+| **balldontlie.io** | Solo NBA (regular + playoffs). No Euroliga/LNB Chile. | ~5 req/min en el tier gratis (cifra de terceros, falta confirmar en el sitio). Stats avanzadas requieren plan pago. | API key gratis |
+| **API-Basketball (api-sports.io)** | NBA confirmada; EuroLeague y LNB Chile sin confirmar (su doc bloqueó el fetch) — hay que probar `GET /leagues?search=euroleague` / `search=chile` con key gratis | ~100 req/día (estimado, comparte infra con API-Football) | API key |
+| **EuroLeague** | No hay API oficial pública. Hay SDKs no oficiales (TS/R) que replican los endpoints del sitio — funcionan pero pueden romperse sin aviso | Sin límite formal, sin SLA | Sin auth (scrapers de endpoints públicos) |
+| **TheSportsDB** | Cobertura de básquet no confirmada con precisión para NBA/Euroliga/LNB | No documentado con exactitud | API key simple |
+| **LNB Chile** | **Sin API pública.** FeedConstruct tiene los derechos EXCLUSIVOS de datos/video de la LNB y LNB2 desde enero 2026 — ojo con esto si se scrapea, podría chocar con esos derechos. Fuente de fixtures: lnbchile.com + redes @chilelnb, sin endpoint documentado | — | — |
+
+**Recomendación:** balldontlie.io para NBA, probar API-Basketball o el SDK no oficial para Euroliga, y para LNB Chile + jugadores chilenos en el exterior (pocos partidos) ir con seguimiento manual/curado en vez de scraping, dado el tema de derechos exclusivos de FeedConstruct.
+
+**Jugadores chilenos de básquet en el exterior (confirmado):**
+- **Sebastián Herrera** — Paris Basketball (Francia) — Betclic Élite / EuroLeague — contrato hasta fin de temporada 2026-27. Primer chileno en jugar EuroLeague.
+- **Sebastián Carrasco** — Gimnasia y Esgrima de Comodoro Rivadavia — Liga Nacional de Básquet de Argentina — campeón y MVP de Finales 2025-26, contrato vigente hasta 2027.
+- *(baja confianza, revisar antes de usar)* Ignacio Arroyo (posible Caja 87, Primera FEB España), Nico Carvacho y Manny Suárez (clubes actuales sin confirmar).
+
+## UFC, One Championship y Rugby — fuentes de datos (investigado 2026-10-24)
+
+**Hallazgo clave: ESPN tiene una API pública NO OFICIAL, gratis, sin API key, que cubre UFC y rugby completos.**
+- UFC: `https://site.api.espn.com/apis/site/v2/sports/mma/ufc/scoreboard` (+ `?dates=YYYYMMDD` para otras fechas) → JSON con calendario completo de eventos UFC.
+- Rugby por liga: `https://site.api.espn.com/apis/site/v2/sports/rugby/{leagueId}/scoreboard` — Six Nations `leagueId=180659`, International Test Match `leagueId=289234`. Falta el ID de "The Rugby Championship" y de la nueva "Nations Cup 2026" (torneo donde juegan Los Cóndores) — se puede sacar visitando espn.com/rugby/scoreboard y leyendo el parámetro `league=` en la URL.
+- **Importante técnico:** hay que pedir estas URLs con header `User-Agent` de navegador y aceptando gzip (`curl -A "Mozilla/5.0" --compressed ...`), si no algunos clientes reciben 403 o la respuesta gzip sin descomprimir.
+- Es una API no documentada oficialmente por ESPN (puede cambiar sin aviso) pero muy usada por la comunidad — conviene tener un fallback/cache si falla.
+- ufc.com oficial: solo HTML server-rendered, sin endpoint `/api/` visible — descartado como fuente primaria (frágil).
+- TheSportsDB: sin cobertura de MMA/UFC. APIs de pago (Sportradar, Zylalabs) descartadas por costo.
+
+**One Championship:** no se encontró ninguna API pública ni gratuita confiable (ni oficial ni de terceros). onefc.com/events parece ser una SPA que podría tener un endpoint interno, pero no se pudo confirmar sin inspección de red con navegador real. **Recomendación: mantención manual** (son solo 1-2 eventos al mes, manejable).
+
+**Los Cóndores (rugby chileno):** sin API confirmada. Calendario 2026 confirmado vía prensa (no la federación directamente, feracvi.cl no resolvió DNS al momento de la investigación — revisar si cambió de dominio): 4 julio vs Rumania (Estadio Nacional), 11 julio vs Hong Kong China (Sausalito, Viña del Mar), 18 julio vs Georgia (La Portada, La Serena), como parte de la nueva "World Rugby Nations Cup 2026". **Recomendación: mantención manual/semi-manual**, con la API de ESPN como respaldo automático si en algún momento ESPN trackea ese torneo.
+
+### Resumen combate/rugby
+| Deporte | Mejor opción | Tipo |
+|---|---|---|
+| UFC | API no oficial de ESPN (`mma/ufc/scoreboard`) | Automatizable, gratis |
+| Rugby tier 1/2 (Six Nations, test matches) | API no oficial de ESPN (`rugby/{id}/scoreboard`) | Automatizable, gratis |
+| One Championship | — | Manual |
+| Los Cóndores / Nations Cup 2026 | — | Manual/semi-manual, con ESPN como respaldo a futuro |
+
+## Fútbol — APIs de fixtures y chilenos en el extranjero (investigado 2026-10-24)
+
+| API | Límite free | Cobertura | Broadcast info | Auth |
+|---|---|---|---|---|
+| **API-Football (api-sports.io)** | ~100 req/día, 10 req/min | La más completa: LaLiga, Premier, Ligue 1, Brasileirão, Liga Arg., Chile Primera División, Copa Libertadores y Sudamericana | No | API key simple en header |
+| **football-data.org** | 10 req/min, 12 competiciones en free tier | Solo ligas europeas top (Champions, Premier, LaLiga, Bundesliga, Ligue1, Serie A, etc.) + Brasileirão. **No** cubre Libertadores/Sudamericana/Chile/Argentina | No | API key header |
+| **TheSportsDB** | ~30 req/min (clave "test" compartida) | Cubre Chile Primera División (ID 4627) y Liga Argentina, Brasileirão. Libertadores/Sudamericana sin confirmar | No | API key en URL |
+| **OpenLigaDB** | Sin key, sin límite | Solo fútbol alemán + algo de Champions/Premier/LaLiga. No sirve para Sudamérica | No | Sin auth |
+| **Highlightly** | 100 req/día | Dice cubrir 950+ ligas, sin confirmar Chile/Libertadores específicamente | No (video/odds es pago) | API key |
+| **SportMonks** | Free real: solo 2 ligas (Dinamarca/Escocia) | No sirve para este proyecto | No | API key |
+
+**Recomendación: API-Football (api-sports.io) como fuente principal.** Es la única que cubre TODO lo que pedimos (Chile, Libertadores, Sudamericana, LaLiga, Premier, Ligue1, Argentina, Brasil) con 100 req/día gratis — alcanza sobrando para 1-2 refrescos diarios vía GitHub Actions. TheSportsDB sirve como respaldo gratuito para datos básicos de equipos. Ninguna API da info de "dónde se transmite" — eso seguirá siendo la tabla manual de streaming.
+
+**Chilenos en el extranjero (fútbol) — borrador a validar, fichajes cambian rápido:**
+- Alexis Sánchez — Sevilla — LaLiga (España)
+- Ben Brereton Díaz — Southampton — Championship/Premier (Inglaterra)
+- Marcelino Núñez — Ipswich Town — Championship (Inglaterra)
+- Darío Osorio — FC Midtjylland — Superliga (Dinamarca), renovó hasta 2030 pero hay rumores de venta
+- Gabriel Suazo — Toulouse FC — Ligue 1 (Francia), contrato hasta jun. 2026
+- Rodrigo Echeverría — León — Liga MX (México)
+- Damián Pizarro — Racing Club (préstamo desde Udinese) — Liga Profesional Argentina
+- Felipe Loyola — dato débil, posiblemente Huachipato (Chile) — revisar
+- **En Chile, NO en el extranjero** (ajustar si los seguías como "afuera"): Arturo Vidal (Colo-Colo), Lucas Assadi (U. de Chile)
+- Claudio Bravo: sin confirmación de club activo, posible retiro/rol de comentarista ESPN
+
 ### Pendiente de confirmar / zonas grises (abierto)
 - Confirmar si CDO (Euroliga) tiene app de streaming accesible sin cable.
 - Copa Sudamericana y LaLiga/Premier/Ligue1: se resolverán con datos partido a partido (vía API de fixtures + guía de TV), no con una regla estática por liga.
 - One Championship en Chile: confirmar acceso exacto vía Claro Sports (¿requiere ser cliente Claro?).
 - Rugby Championship / Nations Cup 2026 (solo se confirmó para partidos de clasificatorio mundialista 2025, vía ESPN/Disney+).
+
+## Conclusión: stack de datos recomendado (fuentes automatizables)
+
+| Deporte/competencia | Fuente automática | Tipo |
+|---|---|---|
+| Fútbol (todas las ligas pedidas, incluido Chile/Libertadores/Sudamericana) | API-Football (api-sports.io), 100 req/día gratis | API, automatizable |
+| NBA | balldontlie.io | API, automatizable |
+| Euroliga | API-Basketball o SDK no oficial de EuroLeague | API/scraper, automatizable (con riesgo de romperse) |
+| LNB Chile + jugadores chilenos de básquet en el exterior | — | Manual/curado (sin API; LNB tiene derechos exclusivos de FeedConstruct) |
+| UFC | API no oficial de ESPN (`site.api.espn.com/.../mma/ufc/scoreboard`) | API, automatizable |
+| Rugby tier 1/2 (Six Nations, test matches) | API no oficial de ESPN (`site.api.espn.com/.../rugby/{id}/scoreboard`) | API, automatizable |
+| One Championship | — | Manual (1-2 eventos/mes) |
+| Los Cóndores / Nations Cup 2026 | — | Manual/semi-manual |
+| Streaming en Chile (qué app transmite qué) | — | Siempre manual, ninguna API lo da |
+
+**Resumen:** la mayoría de lo importante SÍ se puede automatizar gratis (fútbol, NBA, UFC, rugby internacional). Quedan 4 cosas que son manuales por naturaleza: LNB Chile, jugadores chilenos de básquet en el exterior, One Championship, Los Cóndores/rugby chileno específico, y la tabla de streaming — pero son pocos eventos/partidos, manejable con una tabla simple que revisamos juntos cada tanto.
+
+## Próximos pasos (actualizado)
+
+1. **Que valides** las dos listas de jugadores chilenos en el extranjero (fútbol y básquet, en las secciones de arriba) y me digas si agrego/quito a alguien.
+2. Crear cuenta gratis en api-sports.io (API-Football) y balldontlie.io para obtener las API keys (esto lo tienes que hacer tú, son cuentas personales).
+3. Armar el script de GitHub Actions que junta: fixtures de fútbol/NBA/Euroliga/UFC/rugby vía API + tabla manual de streaming + tabla manual de LNB/One/Cóndores/jugadores chilenos de básquet.
+4. Construir la página web con los filtros (deporte / app / horario).
+5. Conectar este repo local a un repo remoto privado en tu GitHub.
