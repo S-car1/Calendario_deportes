@@ -86,6 +86,9 @@
     <select id="f-sport"><option value="">Todos los deportes</option></select>
     <select id="f-app"><option value="">Todas las apps</option></select>
     <select id="f-day"><option value="">Hoy + mañana</option></select>
+    <label style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:.85rem;cursor:pointer;">
+      <input type="checkbox" id="f-destacados" /> ⭐ Solo destacados
+    </label>
   </div>
 
   <div id="list"></div>
@@ -118,6 +121,7 @@ function render(data) {
   document.getElementById("f-sport").onchange = apply;
   document.getElementById("f-app").onchange = apply;
   document.getElementById("f-day").onchange = apply;
+  document.getElementById("f-destacados").onchange = apply;
   draw(events);
 }
 
@@ -135,11 +139,13 @@ function draw(events) {
   const sport = document.getElementById("f-sport").value;
   const app = document.getElementById("f-app").value;
   const day = document.getElementById("f-day").value;
+  const soloDestacados = document.getElementById("f-destacados").checked;
 
   const filtered = events.filter(e =>
     (!sport || e.sport === sport) &&
     (!app || e.streaming_chile.includes(app)) &&
-    (!day || e.date_utc.startsWith(day))
+    (!day || e.date_utc.startsWith(day)) &&
+    (!soloDestacados || e.followed_entities.length || e.importance.length)
   );
 
   const list = document.getElementById("list");
