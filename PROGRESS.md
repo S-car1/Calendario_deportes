@@ -105,6 +105,15 @@ Esta sección se va completando a medida que cada investigación termina.
 - One Championship en Chile: confirmar acceso exacto vía Claro Sports (¿requiere ser cliente Claro?).
 - Rugby Championship / Nations Cup 2026 (solo se confirmó para partidos de clasificatorio mundialista 2025, vía ESPN/Disney+).
 
+## Actualización 2026-10-24 (segunda pasada): scraping real probado con navegador
+
+Ver detalle técnico completo en [SCRAPING_NOTES.md](SCRAPING_NOTES.md). Resumen:
+- **UFC**: calendario completo 2026 (52 eventos) obtenido y guardado en `data/ufc_calendar_2026.md` vía la API de ESPN. 100% automatizable.
+- **One Championship**: calendario completo de próximos eventos obtenido por scraping HTML simple (sin Playwright) en `data/one_championship_calendar_2026.md`. **Streaming confirmado: Amazon Prime Video en Chile** para los eventos grandes "ONE Fight Night".
+- **LNB Chile**: se encontró el sitio oficial real (lnbchile.com, con calendario/box scores muy completos), pero requiere Playwright (datos cargan client-side). **Decisión del usuario: queda como entrada manual**, no vale la pena automatizarlo — la temporada además está terminando.
+- **Rugby/Los Cóndores**: sitio oficial chile.rugby confirmado funcionando (el DNS que falló antes era algo puntual), pero sin calendario estructurado para scrapear — sigue siendo manual.
+- **365Scores**: se revisó si la cuenta del usuario estaba logueada en el navegador de la sesión — no lo estaba, no se pudo usar como atajo para ver sus equipos/ligas ya seleccionados.
+
 ## Conclusión: stack de datos recomendado (fuentes automatizables)
 
 | Deporte/competencia | Fuente automática | Tipo |
