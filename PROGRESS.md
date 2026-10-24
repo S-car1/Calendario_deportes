@@ -1,5 +1,23 @@
 # Progreso de investigación
 
+## Estado del proyecto (2026-10-24, última actualización)
+
+**MVP funcional construido y probado localmente.** Ver [README.md](README.md) para cómo correrlo. Resumen de qué está listo y qué falta:
+
+✅ Listo y probado:
+- Scripts de ingesta para UFC, Rugby (ESPN) y ONE Championship — corren sin API key, probados con datos reales.
+- `scripts/build_report.py` — junta todo en `data/today.json`, probado end-to-end.
+- `index.html` — página con filtros (deporte/app/horario), probada en desktop y mobile con datos reales.
+- `.github/workflows/update-data.yml` — Action que corre 2x al día.
+- Tabla de streaming Chile y lista de jugadores chilenos (`data/streaming_rules.json`, `data/followed_entities.json`), consolidadas de toda la investigación.
+
+⏳ Falta (requiere al usuario):
+1. **Conseguir API keys gratis** de api-sports.io (fútbol) y balldontlie.io (NBA) — son cuentas personales, no las puedo crear yo.
+2. **Conectar el repo a GitHub** — intenté instalar GitHub CLI (`gh`) para hacerlo automático, en curso. Si no queda listo, hay que crear el repo a mano en github.com y hacer el primer push (instrucciones en README).
+3. **Activar GitHub Pages** en la configuración del repo una vez esté en GitHub.
+4. **Validar las listas de jugadores chilenos** (fútbol y básquet) en `data/followed_entities.json` — son borradores de prensa, pueden tener errores.
+
+
 Estado: **investigación inicial completa** — 2026-10-24. Las 4 áreas (fútbol, básquet, combate/rugby, streaming Chile) están listas. Falta tu validación de las listas de jugadores y luego pasamos a construir.
 
 Ver [PLAN.md](PLAN.md) para la arquitectura y el alcance acordado.
