@@ -17,6 +17,16 @@ OUTPUT_PATH = ROOT / "data" / "today.json"
 
 STREAMING_RULES = json.loads((ROOT / "data" / "streaming_rules.json").read_text(encoding="utf-8"))["rules"]
 FOLLOWED = json.loads((ROOT / "data" / "followed_entities.json").read_text(encoding="utf-8"))
+NBA_SPECIAL_WINDOWS = json.loads((ROOT / "data" / "nba_special_windows.json").read_text(encoding="utf-8"))["windows"]
+
+
+def nba_streaming_for(dt: datetime):
+    """Regla NBA: default HBO Max, salvo que la fecha caiga en una ventana especial (Prime Video)."""
+    day = dt.date().isoformat()
+    for w in NBA_SPECIAL_WINDOWS:
+        if w["start_date"] <= day <= w["end_date"]:
+            return w["platforms"]
+    return streaming_for("nba")
 
 
 def window():
@@ -200,7 +210,7 @@ def normalize_nba(raw, start, end):
             "status": g.get("status", "scheduled"),
             "importance": [],
             "followed_entities": [],
-            "streaming_chile": streaming_for("nba"),
+            "streaming_chile": nba_streaming_for(dt),
             "source": "balldontlie",
             "notes": None,
         })

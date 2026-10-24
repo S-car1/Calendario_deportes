@@ -51,5 +51,6 @@ python -m http.server 8765   # y abrir http://localhost:8765/index.html
 
 ## Mantención manual
 - `data/streaming_rules.json` — qué app transmite cada competencia en Chile. Revisar cuando cambien los derechos de TV (ver notas de "última revisión" en cada fila).
+- `data/nba_special_windows.json` — fechas de NBA Cup Knockout / Play-In / Finales donde cambia a Prime Video en vez del default HBO Max. Hay que actualizarlo cada temporada (las fechas no se repiten).
 - `data/followed_entities.json` — jugadores/equipos chilenos seguidos. Revisar en cada ventana de pases.
 - `data/manual_events/` — LNB Chile y Los Cóndores específicos (ver el README de esa carpeta).

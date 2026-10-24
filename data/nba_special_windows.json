@@ -1,0 +1,22 @@
+{
+  "_comment": "Ventanas de fechas donde la NBA cambia la regla default de streaming (HBO Max) por Prime Video exclusivo. build_report.py usa esto para ajustar streaming_chile de los partidos de NBA que caigan en estas fechas. Revisar cada temporada -- las fechas no se repiten automáticamente.",
+  "season": "2026-27",
+  "windows": [
+    {
+      "label": "NBA Cup — Knockout Rounds (Cuartos + Semifinal + Final)",
+      "start_date": "2026-12-04",
+      "end_date": "2026-12-11",
+      "platforms": ["Prime Video"],
+      "confidence": "high",
+      "note": "Fase de grupos (30 oct - 27 nov) va con la regla normal (HBO Max); solo Knockout Rounds es Prime Video exclusivo. Final el 11 de dic en Indianápolis."
+    },
+    {
+      "label": "Play-In Tournament",
+      "start_date": "2027-04-13",
+      "end_date": "2027-04-16",
+      "platforms": ["Prime Video"],
+      "confidence": "low",
+      "note": "Fecha tomada de Wikipedia, no confirmada oficialmente por la NBA al momento de esta investigación (2026-10-24). Revisar antes de abril 2027."
+    }
+  ]
+}
