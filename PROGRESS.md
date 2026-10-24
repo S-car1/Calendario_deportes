@@ -29,9 +29,14 @@ Esta sección se va completando a medida que cada investigación termina.
 | Euroliga | "CDO" aparece como socio oficial en Chile para 2025/26 — no identificado qué es ni si transmite directo al público, falta confirmar | [Watchathletics](https://www.watchathletics.com/page/6191/uleb-euroleague-live-stream-and-tv-channels-by-country) |
 | Liga Nacional de Básquetbol Chile (LNB) | TNT Sports + HBO Max (1 partido exclusivo por fecha, acuerdo para Torneo de Clausura 2026) | [Encancha](https://www.encancha.cl/polideportivo/basquetbol/2026/06/10/tnt-sports-confirma-transmision-de-la-liga-nacional-de-basquetbol-para-el-segundo-semestre-de-2026/) |
 
-### Pendiente de confirmar / zonas grises
-- Mapeo exacto LaLiga vs Premier vs Ligue 1 → qué señal específica (ESPN N vs DGO vs Disney+) por liga.
-- Copa Sudamericana (solo se confirmó Libertadores).
-- One Championship en Chile (sin fuente directa aún).
-- Euroliga: qué es "CDO" exactamente y si tiene app/streaming para el público.
-- Rugby Championship / Nations Cup 2026 (solo se confirmó para partidos de clasificatorio mundialista 2025).
+### Actualización zonas grises (segunda pasada, 2026-10-24)
+- **Euroliga / "CDO"**: CDO = Canal del Deporte Olímpico, canal de TV de pago chileno (del Comité Olímpico de Chile), con planes "CDO" y "CDO+". Es el emisor oficial de Euroliga en Chile para 2025/26. Pendiente: confirmar si tiene app de streaming propia o solo cable.
+- **Copa Sudamericana 2026**: repartida entre DSports, DGO, Amazon Prime Video, Disney+/ESPN según el partido — no hay una sola plataforma fija, cambia por encuentro (similar a Libertadores pero sin el partido gratis semanal confirmado en CHV). Hay que resolverlo con datos partido a partido, no con una regla fija.
+- **LaLiga/Premier/Ligue1 mapeo exacto**: no se pudo confirmar una tabla fija liga→señal. Lo que sí: ESPN tiene Premier League asegurada en Latam hasta 2030-31 (renovación feb 2026) y LaLiga de forma no exclusiva hasta 2026 (ojo, vence este año, revisar qué pasa después). Ligue 1 sin dato. Conclusión: esta fila va a necesitar resolución partido a partido (vía API o guía de TV), no una regla fija simple.
+- **One Championship en Chile**: Claro Sports tiene los derechos para toda Latam excepto Brasil (donde es Globo/Combate). No se confirmó specific channel/app en Chile, pero lo más probable es que sea a través de Claro Sports (canal/app ClaroSports). Falta confirmar si requiere ser cliente Claro o es con cuenta gratuita en clarosports.com.
+
+### Pendiente de confirmar / zonas grises (abierto)
+- Confirmar si CDO (Euroliga) tiene app de streaming accesible sin cable.
+- Copa Sudamericana y LaLiga/Premier/Ligue1: se resolverán con datos partido a partido (vía API de fixtures + guía de TV), no con una regla estática por liga.
+- One Championship en Chile: confirmar acceso exacto vía Claro Sports (¿requiere ser cliente Claro?).
+- Rugby Championship / Nations Cup 2026 (solo se confirmó para partidos de clasificatorio mundialista 2025, vía ESPN/Disney+).
