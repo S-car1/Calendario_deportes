@@ -1,0 +1,55 @@
+name: Actualizar calendario de partidos
+
+on:
+  schedule:
+    # 10:00 y 18:00 UTC = 06:00 y 14:00 hora Chile (aprox, sin considerar horario de verano)
+    - cron: "0 10,18 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Traer UFC (sin key)
+        run: python scripts/fetch_ufc.py
+
+      - name: Traer Rugby (sin key)
+        run: python scripts/fetch_rugby_espn.py
+
+      - name: Traer ONE Championship (sin key)
+        run: python scripts/fetch_one_championship.py
+
+      - name: Traer fútbol
+        if: ${{ secrets.API_FOOTBALL_KEY != '' }}
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python scripts/fetch_football.py
+
+      - name: Traer NBA
+        if: ${{ secrets.BALLDONTLIE_KEY != '' }}
+        env:
+          BALLDONTLIE_KEY: ${{ secrets.BALLDONTLIE_KEY }}
+        run: python scripts/fetch_nba.py
+
+      - name: Armar data/today.json
+        run: python scripts/build_report.py
+
+      - name: Commitear si cambió algo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/today.json data/raw/
+          git diff --staged --quiet || git commit -m "Actualizar calendario de partidos [bot]"
+          git push

@@ -1,0 +1,83 @@
+{
+  "_comment": "Tabla manual de streaming en Chile por competencia. Mantener a mano. updated: fecha de última revisión de esa fila.",
+  "rules": [
+    {
+      "competition_match": ["nba"],
+      "platforms": ["HBO Max"],
+      "notes": "Regla por defecto: TODO partido de NBA que transmite TNT Sports va en vivo simulcast por HBO Max. Excepción: usar la regla 'nba-special-windows' para Play-In, NBA Cup Knockout Rounds y partidos específicos de Finales, que van exclusivo por Prime Video.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["nba-play-in", "nba-cup-knockout", "nba-finals-prime-games"],
+      "platforms": ["Prime Video"],
+      "notes": "Ventanas especiales exclusivas de Prime Video. Requiere marcar manualmente qué partidos caen en estas ventanas según el calendario oficial NBA de cada temporada.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["liga-de-primera-chile", "campeonato-nacional-chile"],
+      "platforms": ["TNT Sports", "HBO Max", "Canal 13 (1 partido/fecha, gratis)"],
+      "notes": "Canal 13/13.cl/Deportes 13 transmite 1 partido por fecha gratis en TV abierta (reemplazó a Mega en 2026). El resto va por TNT Sports + HBO Max.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["copa-libertadores"],
+      "platforms": ["ESPN", "Disney+", "CHV (1 partido/semana, gratis, también Pluto TV/chv.cl/YouTube)"],
+      "notes": "",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["copa-sudamericana"],
+      "platforms": ["DSports", "DGO", "Amazon Prime Video", "Disney+/ESPN"],
+      "notes": "Varía por partido, no hay una señal fija — revisar caso a caso si se automatiza más adelante.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["laliga", "premier-league", "ligue-1"],
+      "platforms": ["ESPN", "DGO", "Disney+ Premium"],
+      "notes": "Sin mapeo exacto liga→señal confirmado. ESPN tiene Premier League asegurada en Latam hasta 2030-31; LaLiga no exclusiva solo hasta 2026 (revisar qué pasa después). Revisar partido a partido.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["liga-profesional-argentina"],
+      "platforms": ["ESPN", "Disney+"],
+      "notes": "Confirmación débil (una sola fuente), re-chequear.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["brasileirao"],
+      "platforms": ["Kick (gratis, 2 partidos/fecha)", "Zapping (señal Fanatiz 1)"],
+      "notes": "",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["ufc"],
+      "platforms": ["Paramount+"],
+      "notes": "Desde enero 2026. Antes era Disney+/ESPN (ya no vigente) — ojo con fuentes viejas en internet.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["one-fight-night"],
+      "platforms": ["Amazon Prime Video"],
+      "notes": "Confirmado vía onefc.com/how-to-watch/cl/. Solo aplica a los eventos grandes 'ONE Fight Night', no a Friday Fights/Samurai (probablemente ONE Super App propio, sin confirmar).",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["rugby-los-condores"],
+      "platforms": ["ESPN", "Disney+"],
+      "notes": "Confirmado para partidos de Clasificatorio Mundial 2025. Nations Cup 2026/Rugby Championship sin confirmar explícitamente — asumir la misma regla hasta que se vea lo contrario.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["euroliga"],
+      "platforms": ["CDO (Canal del Deporte Olímpico)"],
+      "notes": "Canal de TV paga chileno. No confirmado si tiene app de streaming propia sin cable.",
+      "updated": "2026-10-24"
+    },
+    {
+      "competition_match": ["lnb-chile"],
+      "platforms": [],
+      "notes": "Manual por decisión del usuario (temporada terminando, no vale la pena automatizar). Antes se vio por Canal CDO + Basquetpass; para 2026 TNT Sports + HBO Max tienen 1 partido exclusivo por fecha (Torneo de Clausura 2026).",
+      "updated": "2026-10-24"
+    }
+  ]
+}

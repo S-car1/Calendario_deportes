@@ -1,0 +1,204 @@
+{
+  "events": [
+    {
+      "title": "ONE Friday Fights 176 & The Inner Circle 36",
+      "slug": "one-friday-fights-176",
+      "url": "https://www.onefc.com/events/one-friday-fights-176/",
+      "utc_timestamp": 1793359800,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 177 & The Inner Circle 37",
+      "slug": "one-friday-fights-177",
+      "url": "https://www.onefc.com/events/one-friday-fights-177/",
+      "utc_timestamp": 1793964600,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 49: Gabriel Vs. Magomedov",
+      "slug": "onefightnight49",
+      "url": "https://www.onefc.com/events/onefightnight49/",
+      "utc_timestamp": 1794016800,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": true
+    },
+    {
+      "title": "ONE Friday Fights 178 & The Inner Circle 38",
+      "slug": "one-friday-fights-178",
+      "url": "https://www.onefc.com/events/one-friday-fights-178/",
+      "utc_timestamp": 1794569400,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE SAMURAI 5",
+      "slug": "one-samurai-5",
+      "url": "https://www.onefc.com/events/one-samurai-5/",
+      "utc_timestamp": 1794990600,
+      "location": "EBARA WAVE Arena Ota, Tokyo",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 179 & The Inner Circle 39",
+      "slug": "one-friday-fights-179",
+      "url": "https://www.onefc.com/events/one-friday-fights-179/",
+      "utc_timestamp": 1795174200,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 180 & The Inner Circle 40",
+      "slug": "one-friday-fights-180",
+      "url": "https://www.onefc.com/events/one-friday-fights-180/",
+      "utc_timestamp": 1795779000,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE SAMURAI 6",
+      "slug": "one-samurai-6",
+      "url": "https://www.onefc.com/events/one-samurai-6/",
+      "utc_timestamp": 1796200200,
+      "location": "Yokohama Buntai, Yokohama",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 181 & The Inner Circle 41",
+      "slug": "one-friday-fights-181",
+      "url": "https://www.onefc.com/events/one-friday-fights-181/",
+      "utc_timestamp": 1796383800,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 182 & The Inner Circle 42",
+      "slug": "one-friday-fights-182",
+      "url": "https://www.onefc.com/events/one-friday-fights-182/",
+      "utc_timestamp": 1796988600,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 183 & The Inner Circle 43",
+      "slug": "one-friday-fights-183",
+      "url": "https://www.onefc.com/events/one-friday-fights-183/",
+      "utc_timestamp": 1797593400,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 50",
+      "slug": "onefightnight50",
+      "url": "https://www.onefc.com/events/onefightnight50/",
+      "utc_timestamp": 1797645600,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": true
+    },
+    {
+      "title": "ONE: Qatar",
+      "slug": "one-qatar",
+      "url": "https://www.onefc.com/events/one-qatar/",
+      "utc_timestamp": 1806008400,
+      "location": "Aspire Dome, Doha",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE SAMURAI 4",
+      "slug": "one-samurai-4",
+      "url": "https://www.onefc.com/events/one-samurai-4/",
+      "utc_timestamp": 1792218600,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 175 & The Inner Circle 35",
+      "slug": "one-friday-fights-175",
+      "url": "https://www.onefc.com/events/one-friday-fights-175/",
+      "utc_timestamp": 1792150200,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 174 & The Inner Circle 34",
+      "slug": "one-friday-fights-174",
+      "url": "https://www.onefc.com/events/one-friday-fights-174/",
+      "utc_timestamp": 1791545400,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 48: Erdogan vs. Elliott on Prime Video",
+      "slug": "onefightnight48",
+      "url": "https://www.onefc.com/events/onefightnight48/",
+      "utc_timestamp": 1790989200,
+      "location": null,
+      "is_fight_night": true
+    },
+    {
+      "title": "ONE Friday Fights 173 & The Inner Circle 33",
+      "slug": "one-friday-fights-173",
+      "url": "https://www.onefc.com/events/one-friday-fights-173/",
+      "utc_timestamp": 1790940600,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 172 & The Inner Circle 32",
+      "slug": "one-friday-fights-172",
+      "url": "https://www.onefc.com/events/one-friday-fights-172/",
+      "utc_timestamp": 1790335800,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 171 & The Inner Circle 31",
+      "slug": "one-friday-fights-171",
+      "url": "https://www.onefc.com/events/one-friday-fights-171/",
+      "utc_timestamp": 1789731000,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE SAMURAI 3",
+      "slug": "one-samurai-3",
+      "url": "https://www.onefc.com/events/one-samurai-3/",
+      "utc_timestamp": 1789201800,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 170 & The Inner Circle 30",
+      "slug": "one-friday-fights-170",
+      "url": "https://www.onefc.com/events/one-friday-fights-170/",
+      "utc_timestamp": 1789126200,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 47: Stamp vs. Flores on Prime Video",
+      "slug": "onefightnight47",
+      "url": "https://www.onefc.com/events/onefightnight47/",
+      "utc_timestamp": 1788570000,
+      "location": null,
+      "is_fight_night": true
+    },
+    {
+      "title": "ONE Friday Fights 169 & The Inner Circle 29",
+      "slug": "one-friday-fights-169",
+      "url": "https://www.onefc.com/events/one-friday-fights-169/",
+      "utc_timestamp": 1788521400,
+      "location": null,
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 168 & The Inner Circle 28",
+      "slug": "one-friday-fights-168",
+      "url": "https://www.onefc.com/events/one-friday-fights-168/",
+      "utc_timestamp": 1787916600,
+      "location": null,
+      "is_fight_night": false
+    }
+  ]
+}

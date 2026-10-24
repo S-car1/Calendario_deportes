@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calendario Deportes</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --card: #161a1f;
+    --card-hover: #1e242b;
+    --border: #262c33;
+    --text: #e8ecef;
+    --text-muted: #8a939d;
+    --accent: #3b82f6;
+    --accent-soft: rgba(59,130,246,.15);
+    --highlight: #f59e0b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 16px;
+    padding-bottom: 60px;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .subtitle { color: var(--text-muted); font-size: .85rem; margin-bottom: 16px; }
+  .filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  select {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: .85rem;
+  }
+  .day-header {
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    margin: 24px 0 10px;
+  }
+  .event {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .event.highlight { border-color: var(--highlight); background: linear-gradient(0deg, var(--card), rgba(245,158,11,.06)); }
+  .event-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .event-time { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--accent); font-size: .85rem; white-space: nowrap; }
+  .event-sport { font-size: .7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
+  .event-title { font-size: 1rem; font-weight: 600; }
+  .event-competition { font-size: .78rem; color: var(--text-muted); }
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
+  .pill {
+    font-size: .72rem;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .pill.tag { background: rgba(245,158,11,.15); color: var(--highlight); }
+  .empty { color: var(--text-muted); text-align: center; padding: 40px 0; }
+  footer { text-align: center; color: var(--text-muted); font-size: .72rem; margin-top: 30px; }
+</style>
+</head>
+<body>
+  <h1>📅 Calendario Deportes</h1>
+  <div class="subtitle" id="subtitle">Cargando...</div>
+
+  <div class="filters">
+    <select id="f-sport"><option value="">Todos los deportes</option></select>
+    <select id="f-app"><option value="">Todas las apps</option></select>
+    <select id="f-day"><option value="">Hoy + mañana</option></select>
+  </div>
+
+  <div id="list"></div>
+
+  <footer>Generado automáticamente · datos en data/today.json</footer>
+
+<script>
+const SPORT_LABELS = { football: "⚽ Fútbol", basketball: "🏀 Básquet", mma: "🥊 Combate", rugby: "🏉 Rugby" };
+
+async function load() {
+  const res = await fetch("data/today.json", { cache: "no-store" });
+  const data = await res.json();
+  render(data);
+}
+
+function render(data) {
+  const events = data.events || [];
+  document.getElementById("subtitle").textContent =
+    `Actualizado ${new Date(data.generated_at).toLocaleString("es-CL")} · ${events.length} eventos`;
+
+  const sports = [...new Set(events.map(e => e.sport))];
+  const apps = [...new Set(events.flatMap(e => e.streaming_chile))];
+  fillSelect("f-sport", sports, s => SPORT_LABELS[s] || s);
+  fillSelect("f-app", apps, a => a);
+
+  const dayVals = [...new Set(events.map(e => e.date_utc.slice(0, 10)))];
+  fillSelect("f-day", dayVals, d => new Date(d + "T12:00:00Z").toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "short" }));
+
+  const apply = () => draw(events);
+  document.getElementById("f-sport").onchange = apply;
+  document.getElementById("f-app").onchange = apply;
+  document.getElementById("f-day").onchange = apply;
+  draw(events);
+}
+
+function fillSelect(id, values, label) {
+  const sel = document.getElementById(id);
+  values.sort().forEach(v => {
+    const opt = document.createElement("option");
+    opt.value = v;
+    opt.textContent = label(v);
+    sel.appendChild(opt);
+  });
+}
+
+function draw(events) {
+  const sport = document.getElementById("f-sport").value;
+  const app = document.getElementById("f-app").value;
+  const day = document.getElementById("f-day").value;
+
+  const filtered = events.filter(e =>
+    (!sport || e.sport === sport) &&
+    (!app || e.streaming_chile.includes(app)) &&
+    (!day || e.date_utc.startsWith(day))
+  );
+
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="empty">No hay eventos con estos filtros.</div>';
+    return;
+  }
+
+  let currentDay = null;
+  for (const e of filtered) {
+    const day = e.date_utc.slice(0, 10);
+    if (day !== currentDay) {
+      currentDay = day;
+      const h = document.createElement("div");
+      h.className = "day-header";
+      h.textContent = new Date(day + "T12:00:00Z").toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" });
+      list.appendChild(h);
+    }
+
+    const card = document.createElement("div");
+    card.className = "event" + (e.followed_entities.length || e.importance.length ? " highlight" : "");
+
+    const time = new Date(e.date_utc).toLocaleTimeString("es-CL", { hour: "2-digit", minute: "2-digit", timeZone: "America/Santiago" });
+    const title = e.away ? `${e.home} vs ${e.away}` : e.home;
+
+    card.innerHTML = `
+      <div class="event-top">
+        <span class="event-sport">${SPORT_LABELS[e.sport] || e.sport} · ${e.competition}</span>
+        <span class="event-time">${time}</span>
+      </div>
+      <div class="event-title">${title}</div>
+      <div class="pills">
+        ${e.streaming_chile.map(s => `<span class="pill">${s}</span>`).join("")}
+        ${e.followed_entities.map(f => `<span class="pill tag">⭐ ${f}</span>`).join("")}
+        ${e.importance.map(i => `<span class="pill tag">${i}</span>`).join("")}
+      </div>
+    `;
+    list.appendChild(card);
+  }
+}
+
+load();
+</script>
+</body>
+</html>

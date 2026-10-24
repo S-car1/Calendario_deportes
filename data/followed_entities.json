@@ -1,0 +1,31 @@
+{
+  "_comment": "Equipos/jugadores que el usuario sigue especialmente. Lista DRAFT, pendiente de validación del usuario (ver PROGRESS.md). Mantener a mano, los fichajes cambian rápido.",
+  "priority_team": {
+    "sport": "football",
+    "name": "Colo-Colo",
+    "country": "Chile",
+    "note": "Prioridad máxima, siempre destacar si juega"
+  },
+  "football_players_abroad": [
+    {"name": "Alexis Sánchez", "team": "Sevilla", "league": "LaLiga", "country": "España", "confidence": "high"},
+    {"name": "Ben Brereton Díaz", "team": "Southampton", "league": "Championship/Premier League", "country": "Inglaterra", "confidence": "high"},
+    {"name": "Marcelino Núñez", "team": "Ipswich Town", "league": "Championship", "country": "Inglaterra", "confidence": "high"},
+    {"name": "Darío Osorio", "team": "FC Midtjylland", "league": "Superliga", "country": "Dinamarca", "confidence": "medium", "note": "renovó hasta 2030 pero hay rumores de venta"},
+    {"name": "Gabriel Suazo", "team": "Toulouse FC", "league": "Ligue 1", "country": "Francia", "confidence": "medium", "note": "contrato hasta jun. 2026"},
+    {"name": "Rodrigo Echeverría", "team": "León", "league": "Liga MX", "country": "México", "confidence": "high"},
+    {"name": "Damián Pizarro", "team": "Racing Club (préstamo de Udinese)", "league": "Liga Profesional Argentina", "country": "Argentina", "confidence": "medium"},
+    {"name": "Felipe Loyola", "team": "Huachipato (?)", "league": "Primera División de Chile", "country": "Chile", "confidence": "low", "note": "dato débil, revisar — si está en Chile no cuenta como 'en el extranjero'"}
+  ],
+  "football_players_in_chile_not_abroad": [
+    {"name": "Arturo Vidal", "team": "Colo-Colo", "note": "contrato vence dic. 2026, sin definir renovación/retiro"},
+    {"name": "Lucas Assadi", "team": "Universidad de Chile", "note": "contrato termina 2026, rechazó ofertas del extranjero"},
+    {"name": "Claudio Bravo", "team": null, "note": "sin confirmación de club activo, posible retiro / rol de comentarista ESPN"}
+  ],
+  "basketball_players_abroad": [
+    {"name": "Sebastián Herrera", "team": "Paris Basketball", "league": "Betclic Élite / EuroLeague", "country": "Francia", "confidence": "high"},
+    {"name": "Sebastián Carrasco", "team": "Gimnasia y Esgrima de Comodoro Rivadavia", "league": "Liga Nacional de Básquet", "country": "Argentina", "confidence": "high", "note": "campeón y MVP de Finales 2025-26"},
+    {"name": "Ignacio Arroyo", "team": "Caja 87 (?)", "league": "Primera FEB", "country": "España", "confidence": "low"},
+    {"name": "Nico Carvacho", "team": null, "league": null, "country": null, "confidence": "low"},
+    {"name": "Manny Suárez", "team": null, "league": null, "country": null, "confidence": "low"}
+  ]
+}
