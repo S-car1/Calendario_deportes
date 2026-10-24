@@ -9,7 +9,7 @@ import requests
 
 from common import BROWSER_HEADERS, env, write_raw
 
-BASE_URL = "https://api.balldontlie.io/v1/games"
+BASE_URL = "https://api.balldontlie.io/nba/v1/games"
 
 
 def target_dates():

@@ -180,7 +180,11 @@ def normalize_nba(raw, start, end):
         return []
     out = []
     for g in raw["games"]:
-        dt = datetime.fromisoformat(g["date"]).replace(tzinfo=timezone.utc) if "T" not in g["date"] else datetime.fromisoformat(g["date"].replace("Z", "+00:00"))
+        # "datetime" es la hora UTC exacta; "date" es solo la fecha (YYYY-MM-DD) sin hora.
+        raw_dt = g.get("datetime") or g["date"]
+        dt = datetime.fromisoformat(raw_dt.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
         if not in_window(dt, start, end):
             continue
         home = g["home_team"]["full_name"]
