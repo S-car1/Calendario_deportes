@@ -4,159 +4,324 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Calendario Deportes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0b0d10;
-    --card: #161a1f;
-    --card-hover: #1e242b;
-    --border: #262c33;
-    --text: #e8ecef;
-    --text-muted: #8a939d;
-    --accent: #3b82f6;
-    --accent-soft: rgba(59,130,246,.15);
-    --highlight: #f59e0b;
+    --bg: #0a0b0f;
+    --bg-elevated: #121419;
+    --card: #15171d;
+    --card-border: #22252c;
+    --card-border-hover: #333842;
+    --text: #f1f3f5;
+    --text-muted: #8a90a0;
+    --text-faint: #565c6b;
+    --accent: #5b8cff;
+    --accent-soft: rgba(91,140,255,.14);
+    --gold: #f6b93b;
+    --gold-soft: rgba(246,185,59,.14);
+    --football: #22c55e;
+    --basketball: #fb923c;
+    --mma: #f43f5e;
+    --rugby: #38bdf8;
+    --radius: 16px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f4f5f7; --bg-elevated: #fff; --card: #fff; --card-border: #e4e6ea;
+      --card-border-hover: #cfd3da; --text: #16181d; --text-muted: #666d7b; --text-faint: #99a0ad;
+    }
   }
   * { box-sizing: border-box; }
+  html, body { background: var(--bg); }
   body {
     margin: 0;
-    background: var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    padding: 16px;
-    padding-bottom: 60px;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding: 20px 16px 70px;
+    max-width: 1200px;
+    margin-inline: auto;
+    -webkit-font-smoothing: antialiased;
   }
-  h1 { font-size: 1.4rem; margin: 0 0 4px; }
-  .subtitle { color: var(--text-muted); font-size: .85rem; margin-bottom: 16px; }
-  .filters {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
+
+  /* ---------- Header ---------- */
+  header { margin-bottom: 20px; }
+  .title-row { display: flex; align-items: center; gap: 10px; }
+  .title-row .mark {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    flex-shrink: 0;
   }
-  select {
-    background: var(--card);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 8px 10px;
-    font-size: .85rem;
-  }
-  .day-header {
-    font-size: .95rem;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: .04em;
-    margin: 24px 0 10px;
-  }
-  .event {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 12px 14px;
+  h1 { font-size: 1.5rem; font-weight: 800; margin: 0; letter-spacing: -.02em; }
+  .subtitle { color: var(--text-muted); font-size: .82rem; margin: 4px 0 0 44px; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Filter bar ---------- */
+  .filterbar {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 12px 0 14px;
     margin-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: flex; flex-direction: column; gap: 10px;
   }
-  .event.highlight { border-color: var(--highlight); background: linear-gradient(0deg, var(--card), rgba(245,158,11,.06)); }
-  .event-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-  .event-time { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--accent); font-size: .85rem; white-space: nowrap; }
-  .event-sport { font-size: .7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
-  .event-title { font-size: 1rem; font-weight: 600; }
-  .event-competition { font-size: .78rem; color: var(--text-muted); }
-  .pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--card); border: 1px solid var(--card-border);
+    color: var(--text-muted); font-size: .82rem; font-weight: 600;
+    padding: 7px 13px; border-radius: 999px; cursor: pointer;
+    transition: .15s ease; white-space: nowrap; user-select: none;
+  }
+  .chip:hover { border-color: var(--card-border-hover); color: var(--text); }
+  .chip.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  .chip.active.star { background: var(--gold-soft); border-color: var(--gold); color: var(--gold); }
+  .chip .dot { width: 7px; height: 7px; border-radius: 50%; }
+
+  .segmented {
+    display: inline-flex; background: var(--card); border: 1px solid var(--card-border);
+    border-radius: 999px; padding: 3px; gap: 2px;
+  }
+  .segmented button {
+    border: none; background: transparent; color: var(--text-muted);
+    font-family: inherit; font-size: .8rem; font-weight: 600;
+    padding: 6px 12px; border-radius: 999px; cursor: pointer; transition: .15s ease;
+  }
+  .segmented button.active { background: var(--accent); color: #fff; }
+
+  select.app-select {
+    background: var(--card); color: var(--text-muted); border: 1px solid var(--card-border);
+    border-radius: 999px; padding: 7px 13px; font-size: .82rem; font-weight: 600; font-family: inherit;
+    cursor: pointer;
+  }
+
+  /* ---------- Day header ---------- */
+  .day-header {
+    font-size: .78rem; font-weight: 700; color: var(--text-faint);
+    text-transform: uppercase; letter-spacing: .08em;
+    margin: 28px 2px 12px; display: flex; align-items: center; gap: 10px;
+  }
+  .day-header::after { content: ""; flex: 1; height: 1px; background: var(--card-border); }
+
+  /* ---------- Grid ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 12px;
+  }
+
+  .event {
+    position: relative;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 14px 16px 13px;
+    overflow: hidden;
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    animation: rise .35s ease both;
+    cursor: default;
+  }
+  .event::before {
+    content: ""; position: absolute; inset: 0 auto 0 0; width: 3px;
+    background: var(--sport-color, var(--accent));
+  }
+  .event:hover {
+    border-color: var(--card-border-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -12px rgba(0,0,0,.5);
+  }
+  .event.boosted { border-color: color-mix(in srgb, var(--gold) 45%, var(--card-border)); }
+  .event.boosted::after {
+    content: "★"; position: absolute; top: 10px; right: 12px; color: var(--gold); font-size: .85rem;
+  }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+  .event-meta {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px;
+  }
+  .league { display: flex; align-items: center; gap: 6px; min-width: 0; }
+  .league img { width: 16px; height: 16px; object-fit: contain; border-radius: 3px; flex-shrink: 0; }
+  .league span {
+    font-size: .72rem; font-weight: 700; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: .03em;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .time {
+    font-family: "JetBrains Mono", monospace; font-size: .78rem; font-weight: 600;
+    color: var(--text); background: var(--bg-elevated); padding: 3px 8px; border-radius: 7px;
+    flex-shrink: 0;
+  }
+
+  .matchup { display: flex; align-items: center; gap: 10px; margin-bottom: 11px; }
+  .team { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+  .team.away { flex-direction: row-reverse; text-align: right; }
+  .crest {
+    width: 30px; height: 30px; border-radius: 8px; object-fit: contain;
+    background: var(--bg-elevated); flex-shrink: 0; padding: 3px;
+  }
+  .crest.fallback {
+    display: flex; align-items: center; justify-content: center;
+    font-size: .95rem; background: color-mix(in srgb, var(--sport-color, var(--accent)) 18%, var(--bg-elevated));
+  }
+  .team-name {
+    font-size: .85rem; font-weight: 600; line-height: 1.22;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .vs { font-size: .68rem; font-weight: 700; color: var(--text-faint); flex-shrink: 0; }
+  .single-event .team-name { font-size: .92rem; white-space: normal; }
+
+  .pills { display: flex; gap: 5px; flex-wrap: wrap; }
   .pill {
-    font-size: .72rem;
-    padding: 3px 8px;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent);
+    font-size: .68rem; font-weight: 600; padding: 3px 9px; border-radius: 999px;
+    background: var(--bg-elevated); color: var(--text-muted); border: 1px solid var(--card-border);
   }
-  .pill.tag { background: rgba(245,158,11,.15); color: var(--highlight); }
-  .empty { color: var(--text-muted); text-align: center; padding: 40px 0; }
-  footer { text-align: center; color: var(--text-muted); font-size: .72rem; margin-top: 30px; }
+  .pill.tag { background: var(--gold-soft); color: var(--gold); border-color: transparent; }
+  .pill.followed { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+
+  .empty { color: var(--text-muted); text-align: center; padding: 60px 0; font-size: .9rem; }
+  footer { text-align: center; color: var(--text-faint); font-size: .72rem; margin-top: 36px; }
+  footer a { color: inherit; }
 </style>
 </head>
 <body>
-  <h1>📅 Calendario Deportes</h1>
-  <div class="subtitle" id="subtitle">Cargando...</div>
+  <header>
+    <div class="title-row"><div class="mark">📅</div><h1>Calendario Deportes</h1></div>
+    <div class="subtitle" id="subtitle">Cargando…</div>
+  </header>
 
-  <div class="filters">
-    <select id="f-sport"><option value="">Todos los deportes</option></select>
-    <select id="f-app"><option value="">Todas las apps</option></select>
-    <select id="f-day"><option value="">Hoy + mañana</option></select>
-    <label style="display:flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:.85rem;cursor:pointer;">
-      <input type="checkbox" id="f-destacados" /> ⭐ Solo destacados
-    </label>
+  <div class="filterbar">
+    <div class="row" id="sport-row"></div>
+    <div class="row">
+      <div class="segmented" id="day-seg"></div>
+      <div class="segmented" id="sort-seg">
+        <button data-sort="relevance" class="active">Relevancia</button>
+        <button data-sort="time">Hora</button>
+      </div>
+      <select class="app-select" id="f-app"><option value="">Todas las apps</option></select>
+      <button class="chip star" id="f-destacados">⭐ Destacados</button>
+    </div>
   </div>
 
   <div id="list"></div>
 
-  <footer>Generado automáticamente · datos en data/today.json</footer>
+  <footer>Generado automáticamente · <a href="https://github.com/S-car1/Calendario_deportes">github.com/S-car1/Calendario_deportes</a></footer>
 
 <script>
-const SPORT_LABELS = { football: "⚽ Fútbol", basketball: "🏀 Básquet", mma: "🥊 Combate", rugby: "🏉 Rugby" };
+const SHORT_COMPETITION = {
+  "Liga de Primera (Chile)": "Liga de Primera",
+  "Liga Profesional Argentina": "Liga Argentina",
+  "UEFA Champions League": "Champions League",
+  "Copa Libertadores": "Libertadores",
+  "Copa Sudamericana": "Sudamericana",
+};
+
+const SPORT_META = {
+  football: { label: "Fútbol", emoji: "⚽", color: "var(--football)" },
+  basketball: { label: "Básquet", emoji: "🏀", color: "var(--basketball)" },
+  mma: { label: "Combate", emoji: "🥊", color: "var(--mma)" },
+  rugby: { label: "Rugby", emoji: "🏉", color: "var(--rugby)" },
+};
+
+let EVENTS = [];
+let state = { sport: "", app: "", day: "", sort: "relevance", onlyStarred: false };
 
 async function load() {
   const res = await fetch("data/today.json", { cache: "no-store" });
   const data = await res.json();
-  render(data);
-}
-
-function render(data) {
-  const events = data.events || [];
+  EVENTS = data.events || [];
   document.getElementById("subtitle").textContent =
-    `Actualizado ${new Date(data.generated_at).toLocaleString("es-CL")} · ${events.length} eventos`;
-
-  const sports = [...new Set(events.map(e => e.sport))];
-  const apps = [...new Set(events.flatMap(e => e.streaming_chile))];
-  fillSelect("f-sport", sports, s => SPORT_LABELS[s] || s);
-  fillSelect("f-app", apps, a => a);
-
-  const dayVals = [...new Set(events.map(e => e.date_utc.slice(0, 10)))];
-  fillSelect("f-day", dayVals, d => new Date(d + "T12:00:00Z").toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "short" }));
-
-  const apply = () => draw(events);
-  document.getElementById("f-sport").onchange = apply;
-  document.getElementById("f-app").onchange = apply;
-  document.getElementById("f-day").onchange = apply;
-  document.getElementById("f-destacados").onchange = apply;
-  draw(events);
+    `Actualizado ${new Date(data.generated_at).toLocaleString("es-CL", { dateStyle: "short", timeStyle: "short" })} · ${EVENTS.length} eventos`;
+  buildFilters();
+  draw();
 }
 
-function fillSelect(id, values, label) {
-  const sel = document.getElementById(id);
-  values.sort().forEach(v => {
-    const opt = document.createElement("option");
-    opt.value = v;
-    opt.textContent = label(v);
-    sel.appendChild(opt);
+function buildFilters() {
+  const sports = [...new Set(EVENTS.map(e => e.sport))];
+  const sportRow = document.getElementById("sport-row");
+  sportRow.innerHTML = `<div class="chip active" data-sport="">Todos</div>` + sports.map(s => {
+    const m = SPORT_META[s] || { label: s, emoji: "🏆", color: "var(--accent)" };
+    return `<div class="chip" data-sport="${s}"><span class="dot" style="background:${m.color}"></span>${m.emoji} ${m.label}</div>`;
+  }).join("");
+  sportRow.querySelectorAll(".chip").forEach(chip => {
+    chip.onclick = () => {
+      sportRow.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      state.sport = chip.dataset.sport;
+      draw();
+    };
   });
+
+  const days = [...new Set(EVENTS.map(e => e.date_utc.slice(0, 10)))].sort();
+  const daySeg = document.getElementById("day-seg");
+  const dayLabel = (d, i) => i === 0 ? "Hoy" : i === 1 ? "Mañana" : new Date(d + "T12:00:00Z").toLocaleDateString("es-CL", { weekday: "short" });
+  daySeg.innerHTML = `<button data-day="" class="active">Todo</button>` + days.map((d, i) => `<button data-day="${d}">${dayLabel(d, i)}</button>`).join("");
+  daySeg.querySelectorAll("button").forEach(btn => {
+    btn.onclick = () => {
+      daySeg.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.day = btn.dataset.day;
+      draw();
+    };
+  });
+
+  document.getElementById("sort-seg").querySelectorAll("button").forEach(btn => {
+    btn.onclick = () => {
+      btn.parentElement.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.sort = btn.dataset.sort;
+      draw();
+    };
+  });
+
+  const apps = [...new Set(EVENTS.flatMap(e => e.streaming_chile))].sort();
+  const appSelect = document.getElementById("f-app");
+  apps.forEach(a => {
+    const opt = document.createElement("option");
+    opt.value = a; opt.textContent = a;
+    appSelect.appendChild(opt);
+  });
+  appSelect.onchange = () => { state.app = appSelect.value; draw(); };
+
+  document.getElementById("f-destacados").onclick = (e) => {
+    state.onlyStarred = !state.onlyStarred;
+    e.currentTarget.classList.toggle("active", state.onlyStarred);
+    draw();
+  };
 }
 
-function draw(events) {
-  const sport = document.getElementById("f-sport").value;
-  const app = document.getElementById("f-app").value;
-  const day = document.getElementById("f-day").value;
-  const soloDestacados = document.getElementById("f-destacados").checked;
+function teamBlock(name, logo, sportColor, side) {
+  if (!name) return "";
+  const img = logo
+    ? `<img class="crest" src="${logo}" alt="" onerror="this.outerHTML='<div class=\\'crest fallback\\' style=\\'--sport-color:${sportColor}\\'>🏳️</div>'" />`
+    : `<div class="crest fallback" style="--sport-color:${sportColor}">🏳️</div>`;
+  return `<div class="team ${side}">${img}<span class="team-name">${name}</span></div>`;
+}
 
-  const filtered = events.filter(e =>
-    (!sport || e.sport === sport) &&
-    (!app || e.streaming_chile.includes(app)) &&
-    (!day || e.date_utc.startsWith(day)) &&
-    (!soloDestacados || e.followed_entities.length || e.importance.length)
+function draw() {
+  let filtered = EVENTS.filter(e =>
+    (!state.sport || e.sport === state.sport) &&
+    (!state.app || e.streaming_chile.includes(state.app)) &&
+    (!state.day || e.date_utc.startsWith(state.day)) &&
+    (!state.onlyStarred || e.followed_entities.length || e.importance.length)
   );
+
+  if (state.sort === "time") {
+    filtered = [...filtered].sort((a, b) => a.date_utc.localeCompare(b.date_utc));
+  } // si no, ya vienen ordenados por día+relevancia desde build_report.py
 
   const list = document.getElementById("list");
   list.innerHTML = "";
 
   if (!filtered.length) {
-    list.innerHTML = '<div class="empty">No hay eventos con estos filtros.</div>';
+    list.innerHTML = '<div class="empty">No hay eventos con estos filtros 🤷</div>';
     return;
   }
 
-  let currentDay = null;
+  let currentDay = null, grid = null;
   for (const e of filtered) {
     const day = e.date_utc.slice(0, 10);
     if (day !== currentDay) {
@@ -165,27 +330,45 @@ function draw(events) {
       h.className = "day-header";
       h.textContent = new Date(day + "T12:00:00Z").toLocaleDateString("es-CL", { weekday: "long", day: "numeric", month: "long" });
       list.appendChild(h);
+      grid = document.createElement("div");
+      grid.className = "grid";
+      list.appendChild(grid);
     }
 
-    const card = document.createElement("div");
-    card.className = "event" + (e.followed_entities.length || e.importance.length ? " highlight" : "");
-
+    const meta = SPORT_META[e.sport] || { emoji: "🏆", color: "var(--accent)" };
     const time = new Date(e.date_utc).toLocaleTimeString("es-CL", { hour: "2-digit", minute: "2-digit", timeZone: "America/Santiago" });
-    const title = e.away ? `${e.home} vs ${e.away}` : e.home;
+    const boosted = e.followed_entities.length || e.importance.length;
+    const singleEvent = !e.away;
+
+    const card = document.createElement("div");
+    card.className = "event" + (boosted ? " boosted" : "") + (singleEvent ? " single-event" : "");
+    card.style.setProperty("--sport-color", meta.color);
+
+    const leagueLogo = e.league_logo
+      ? `<img src="${e.league_logo}" alt="" onerror="this.remove()" />`
+      : "";
+
+    const matchupHtml = singleEvent
+      ? `<div class="matchup">${teamBlock(e.home, e.home_logo, meta.color, "home")}</div>`
+      : `<div class="matchup">
+           ${teamBlock(e.home, e.home_logo, meta.color, "home")}
+           <span class="vs">VS</span>
+           ${teamBlock(e.away, e.away_logo, meta.color, "away")}
+         </div>`;
 
     card.innerHTML = `
-      <div class="event-top">
-        <span class="event-sport">${SPORT_LABELS[e.sport] || e.sport} · ${e.competition}</span>
-        <span class="event-time">${time}</span>
+      <div class="event-meta">
+        <div class="league">${leagueLogo}<span>${SHORT_COMPETITION[e.competition] || e.competition}</span></div>
+        <span class="time">${time}</span>
       </div>
-      <div class="event-title">${title}</div>
+      ${matchupHtml}
       <div class="pills">
         ${e.streaming_chile.map(s => `<span class="pill">${s}</span>`).join("")}
-        ${e.followed_entities.map(f => `<span class="pill tag">⭐ ${f}</span>`).join("")}
+        ${e.followed_entities.map(f => `<span class="pill followed">⭐ ${f}</span>`).join("")}
         ${e.importance.map(i => `<span class="pill tag">${i}</span>`).join("")}
       </div>
     `;
-    list.appendChild(card);
+    grid.appendChild(card);
   }
 }
 

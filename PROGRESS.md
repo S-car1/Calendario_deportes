@@ -11,11 +11,16 @@
 - `.github/workflows/update-data.yml` — Action que corre 2x al día.
 - Tabla de streaming Chile y lista de jugadores chilenos (`data/streaming_rules.json`, `data/followed_entities.json`), consolidadas de toda la investigación.
 
-⏳ Falta (requiere al usuario):
-1. **Conseguir API keys gratis** de api-sports.io (fútbol) y balldontlie.io (NBA) — son cuentas personales, no las puedo crear yo.
-2. **Conectar el repo a GitHub** — intenté instalar GitHub CLI (`gh`) para hacerlo automático, en curso. Si no queda listo, hay que crear el repo a mano en github.com y hacer el primer push (instrucciones en README).
-3. **Activar GitHub Pages** en la configuración del repo una vez esté en GitHub.
-4. **Validar las listas de jugadores chilenos** (fútbol y básquet) en `data/followed_entities.json` — son borradores de prensa, pueden tener errores.
+✅ Hecho (actualización 2026-10-25):
+- Repo conectado y publicado: https://s-car1.github.io/Calendario_deportes/ (GitHub Action corriendo 2x/día, confirmado funcionando en los servidores de GitHub).
+- Se reemplazó el enfoque con API keys (API-Football/balldontlie) por **scraping 100% gratis vía la API no oficial de ESPN** (mismo patrón que UFC) — cubre las 8 ligas de fútbol + Champions League + NBA + Euroliga + rugby, sin ninguna cuenta.
+- Se sacó la lista REAL de equipos/ligas seguidos desde la cuenta de 365Scores del usuario (29 equipos, 31 ligas) y se reemplazó el borrador de `data/followed_entities.json`.
+- Rediseño completo de `index.html`: grilla moderna con logos de equipos/ligas (vía ESPN), orden por relevancia (combinando gustos del usuario + importancia del partido, con auto-detección de clásicos), filtros por deporte/día/app/destacados. Probado en desktop y mobile.
+
+⏳ Falta:
+1. Validar que los logos/nombres de equipo calcen bien en casos raros (ej. equipos chicos sin logo en ESPN).
+2. Ampliar cobertura a más ligas de la lista real de 365Scores si se justifica (Copa Chile, Top 14, Super Rugby, AmeriCup, etc. — ver `data/followed_entities.json -> leagues_followed_in_365scores`).
+3. LNB Chile y Los Cóndores específicos siguen manuales (decisión ya tomada).
 
 
 Estado: **investigación inicial completa** — 2026-10-24. Las 4 áreas (fútbol, básquet, combate/rugby, streaming Chile) están listas. Falta tu validación de las listas de jugadores y luego pasamos a construir.

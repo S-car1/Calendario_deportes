@@ -11,8 +11,11 @@ def fetch():
     resp = requests.get(URL, headers=BROWSER_HEADERS, timeout=20)
     resp.raise_for_status()
     data = resp.json()
-    calendar = data["leagues"][0]["calendar"]
-    write_raw("ufc", {"events": calendar})
+    league = data["leagues"][0]
+    calendar = league["calendar"]
+    logos = league.get("logos", [])
+    logo = next((l["href"] for l in logos if "default" in l.get("rel", [])), None) or (logos[0]["href"] if logos else None)
+    write_raw("ufc", {"events": calendar, "logo": logo})
     return calendar
 
 

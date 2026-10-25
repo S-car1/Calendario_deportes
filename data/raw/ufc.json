@@ -416,5 +416,6 @@
         "$ref": "http://sports.core.api.espn.pvt/v2/sports/mma/leagues/ufc/events/600061401?lang=en&region=us"
       }
     }
-  ]
+  ],
+  "logo": "https://a.espncdn.com/i/teamlogos/leagues/500/ufc.png"
 }

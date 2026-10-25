@@ -22,6 +22,7 @@ LEAGUES = [
     ("soccer", "bra.1", "brasileirao", "Brasileirão", "football"),
     ("soccer", "conmebol.libertadores", "copa-libertadores", "Copa Libertadores", "football"),
     ("soccer", "conmebol.sudamericana", "copa-sudamericana", "Copa Sudamericana", "football"),
+    ("soccer", "uefa.champions", "champions-league", "UEFA Champions League", "football"),
     ("basketball", "nba", "nba", "NBA", "basketball"),
     ("basketball", "euroleague", "euroliga", "Euroliga", "basketball"),
     ("rugby", "180659", "rugby-tier1", "Six Nations", "rugby"),
@@ -45,10 +46,16 @@ def fetch():
                 print(f"[!] {espn_sport}/{slug} {date}: status {resp.status_code}, se omite")
                 continue
             data = resp.json()
+            league_logo = None
+            logos = data.get("leagues", [{}])[0].get("logos", [])
+            default_logo = next((l["href"] for l in logos if "default" in l.get("rel", [])), None)
+            league_logo = default_logo or (logos[0]["href"] if logos else None)
+
             for ev in data.get("events", []):
                 ev["_competition_tier"] = tier
                 ev["_competition_name"] = name
                 ev["_sport"] = sport
+                ev["_league_logo"] = league_logo
                 all_events.append(ev)
 
     write_raw("espn_sports", {"events": all_events})

@@ -1,0 +1,17 @@
+{
+  "_comment": "Pares de equipos que build_report.py marca con importance=['clasico'] cuando se enfrentan. Lista base, se puede ampliar.",
+  "rivalries": [
+    {"teams": ["Colo-Colo", "Universidad de Chile"], "label": "Superclásico"},
+    {"teams": ["Universidad de Chile", "Universidad Católica"], "label": "Clásico Universitario"},
+    {"teams": ["Colo-Colo", "Universidad Católica"], "label": "Clásico"},
+    {"teams": ["Real Madrid", "Barcelona"], "label": "El Clásico"},
+    {"teams": ["Real Madrid", "Atletico Madrid"], "label": "Derbi Madrileño"},
+    {"teams": ["Boca Juniors", "River Plate"], "label": "Superclásico"},
+    {"teams": ["Manchester United", "Liverpool"], "label": "Clásico"},
+    {"teams": ["Manchester City", "Manchester United"], "label": "Derbi de Manchester"},
+    {"teams": ["Arsenal", "Tottenham Hotspur"], "label": "North London Derby"},
+    {"teams": ["Flamengo", "Fluminense"], "label": "Fla-Flu"},
+    {"teams": ["Paris Saint-Germain", "Marseille"], "label": "Le Classique"},
+    {"teams": ["Los Angeles Lakers", "Boston Celtics"], "label": "Clásico NBA"}
+  ]
+}

@@ -4,21 +4,27 @@ Todo el pipeline converge en un único archivo `data/today.json`, que es lo que 
 
 ```json
 {
-  "id": "football-api-123456",
+  "id": "espn-600123456",
   "sport": "football",
   "competition": "Liga de Primera (Chile)",
-  "competition_tier": "chile",
+  "competition_tier": "liga-de-primera-chile",
   "date_utc": "2026-10-25T23:00:00Z",
-  "home": "Colo-Colo",
+  "home": "Colo Colo",
   "away": "Universidad de Chile",
-  "status": "scheduled",
-  "importance": ["clasico"],
+  "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/XXXX.png",
+  "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/YYYY.png",
+  "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/ZZZ.png",
+  "status": "Scheduled",
+  "importance": ["Superclásico"],
   "followed_entities": ["Colo-Colo"],
-  "streaming_chile": ["TNT Sports Premium", "HBO Max"],
-  "source": "api-football",
+  "streaming_chile": ["TNT Sports", "HBO Max", "Canal 13 (1 partido/fecha, gratis)"],
+  "relevance_score": 90,
+  "source": "espn-api",
   "notes": null
 }
 ```
+
+`relevance_score` se calcula en `build_report.py`: peso base por competencia (`TIER_WEIGHT`) + 50 por cada entidad seguida que aparece + 30 por cada tag de `importance`. El build ordena por día y, dentro del día, de mayor a menor relevancia — el frontend puede reordenar por hora si se prefiere.
 
 Campos:
 - `sport`: `football` | `basketball` | `mma` | `rugby`

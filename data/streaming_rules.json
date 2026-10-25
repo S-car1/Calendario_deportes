@@ -38,6 +38,12 @@
       "updated": "2026-10-24"
     },
     {
+      "competition_match": ["champions-league"],
+      "platforms": ["ESPN", "Disney+"],
+      "notes": "Sin confirmar en detalle para 2026-27 (se vio que los derechos de Europa League/Champions cambian en 2027). Revisar antes de depender de este dato.",
+      "updated": "2026-10-24"
+    },
+    {
       "competition_match": ["liga-profesional-argentina"],
       "platforms": ["ESPN", "Disney+"],
       "notes": "Confirmación débil (una sola fuente), re-chequear.",

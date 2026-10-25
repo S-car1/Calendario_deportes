@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from common import BROWSER_HEADERS, write_raw
 
 EVENTS_URL = "https://www.onefc.com/events/"
+LOGO_URL = "https://cdn.onefc.com/wp-content/uploads/2020/01/ONE_logo-1024-w.png"
 
 
 def fetch():
@@ -36,7 +37,7 @@ def fetch():
             }
         )
 
-    write_raw("one_championship", {"events": events})
+    write_raw("one_championship", {"events": events, "logo": LOGO_URL})
     return events
 
 

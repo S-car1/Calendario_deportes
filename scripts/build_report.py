@@ -2,9 +2,8 @@
 en un único data/today.json con el formato común (ver docs/schema.md). Es lo único que
 lee la página web.
 
-Corre esto DESPUÉS de los scripts fetch_*.py. Si algún data/raw/<fuente>.json no existe
-(por ejemplo porque todavía no configuraste la API key de esa fuente), simplemente la
-omite -- no rompe el build.
+Corre esto DESPUÉS de los scripts fetch_*.py. Si algún data/raw/<fuente>.json no existe,
+simplemente la omite -- no rompe el build.
 """
 import json
 from datetime import datetime, timedelta, timezone
@@ -18,6 +17,28 @@ OUTPUT_PATH = ROOT / "data" / "today.json"
 STREAMING_RULES = json.loads((ROOT / "data" / "streaming_rules.json").read_text(encoding="utf-8"))["rules"]
 FOLLOWED = json.loads((ROOT / "data" / "followed_entities.json").read_text(encoding="utf-8"))
 NBA_SPECIAL_WINDOWS = json.loads((ROOT / "data" / "nba_special_windows.json").read_text(encoding="utf-8"))["windows"]
+RIVALRIES = json.loads((ROOT / "data" / "rivalries.json").read_text(encoding="utf-8"))["rivalries"]
+
+# Peso base de relevancia por competencia -- refleja cuánto le importan al usuario estas
+# ligas en general (independiente de si sigue a un equipo/jugador puntual en el partido).
+TIER_WEIGHT = {
+    "liga-de-primera-chile": 40,
+    "copa-libertadores": 38,
+    "nba": 35,
+    "ufc": 32,
+    "one-fight-night": 32,
+    "copa-sudamericana": 28,
+    "premier-league": 25,
+    "laliga": 25,
+    "brasileirao": 20,
+    "liga-profesional-argentina": 20,
+    "ligue-1": 18,
+    "euroliga": 15,
+    "rugby-tier1": 15,
+    "one-friday-fights": 8,
+}
+FOLLOWED_BONUS = 50
+IMPORTANCE_BONUS = 30
 
 
 def nba_streaming_for(dt: datetime):
@@ -56,16 +77,56 @@ def streaming_for(competition_key: str):
     return []
 
 
+def _norm(s: str) -> str:
+    """Minúsculas y sin guiones, para que 'Colo-Colo' matchee con el 'Colo Colo' de ESPN."""
+    return (s or "").lower().replace("-", " ").replace("  ", " ").strip()
+
+
 def followed_entities_in(*names):
-    """Devuelve la lista de nombres seguidos que aparecen (substring, case-insensitive) en los nombres dados."""
-    haystack = " ".join(n or "" for n in names).lower()
+    """Devuelve la lista de nombres seguidos que aparecen (substring, normalizado) en los nombres dados.
+    Cruza contra los 29 equipos reales de 365Scores (data/followed_entities.json -> teams) +
+    los jugadores chilenos en el extranjero que no son ya uno de esos equipos."""
+    haystack = _norm(" ".join(n or "" for n in names))
     found = []
-    if FOLLOWED["priority_team"]["name"].lower() in haystack:
-        found.append(FOLLOWED["priority_team"]["name"])
+    for team in FOLLOWED["teams"]:
+        if _norm(team) in haystack:
+            found.append(team)
     for p in FOLLOWED["football_players_abroad"] + FOLLOWED["basketball_players_abroad"]:
-        if p["name"].split()[-1].lower() in haystack:  # match por apellido alcanza
+        if _norm(p["name"].split()[-1]) in haystack:  # match por apellido alcanza
             found.append(p["name"])
     return found
+
+
+def importance_tags(home, away):
+    """Detecta clásicos/rivalidades conocidas por substring en home/away."""
+    if not home or not away:
+        return []
+    haystack = _norm(f"{home} {away}")
+    for riv in RIVALRIES:
+        a, b = riv["teams"]
+        if _norm(a) in haystack and _norm(b) in haystack:
+            return [riv["label"]]
+    return []
+
+
+PRIORITY_TEAM_BONUS = 25
+
+
+def relevance_score(tier, followed, importance):
+    score = TIER_WEIGHT.get(tier, 10)
+    score += FOLLOWED_BONUS * len(followed)
+    score += IMPORTANCE_BONUS * len(importance)
+    if any(_norm(FOLLOWED["priority_team"]["name"]) == _norm(f) for f in followed):
+        score += PRIORITY_TEAM_BONUS
+    return score
+
+
+def build_event(**kwargs):
+    """Construye un evento del esquema común, calculando relevance_score automáticamente."""
+    kwargs["relevance_score"] = relevance_score(
+        kwargs["competition_tier"], kwargs["followed_entities"], kwargs["importance"]
+    )
+    return kwargs
 
 
 # ---------------------------------------------------------------------------
@@ -76,25 +137,29 @@ def normalize_ufc(raw, start, end):
     if not raw:
         return []
     out = []
+    logo = raw.get("logo")
     for ev in raw["events"]:
         dt = datetime.fromisoformat(ev["startDate"].replace("Z", "+00:00"))
         if not in_window(dt, start, end):
             continue
-        out.append({
-            "id": f"ufc-{ev['startDate']}-{ev['label']}",
-            "sport": "mma",
-            "competition": "UFC",
-            "competition_tier": "ufc",
-            "date_utc": ev["startDate"],
-            "home": ev["label"],
-            "away": None,
-            "status": "scheduled",
-            "importance": [],
-            "followed_entities": [],
-            "streaming_chile": streaming_for("ufc"),
-            "source": "espn-api",
-            "notes": None,
-        })
+        out.append(build_event(
+            id=f"ufc-{ev['startDate']}-{ev['label']}",
+            sport="mma",
+            competition="UFC",
+            competition_tier="ufc",
+            date_utc=ev["startDate"],
+            home=ev["label"],
+            away=None,
+            home_logo=logo,
+            away_logo=None,
+            league_logo=logo,
+            status="scheduled",
+            importance=[],
+            followed_entities=[],
+            streaming_chile=streaming_for("ufc"),
+            source="espn-api",
+            notes=None,
+        ))
     return out
 
 
@@ -102,6 +167,7 @@ def normalize_one(raw, start, end):
     if not raw:
         return []
     out = []
+    logo = raw.get("logo")
     for ev in raw["events"]:
         if not ev.get("utc_timestamp"):
             continue
@@ -109,21 +175,25 @@ def normalize_one(raw, start, end):
         if not in_window(dt, start, end):
             continue
         tier = "one-fight-night" if ev["is_fight_night"] else "one-friday-fights"
-        out.append({
-            "id": f"one-{ev['slug']}",
-            "sport": "mma",
-            "competition": "ONE Championship",
-            "competition_tier": tier,
-            "date_utc": dt.isoformat(),
-            "home": ev["title"],
-            "away": None,
-            "status": "scheduled",
-            "importance": ["destacado"] if ev["is_fight_night"] else [],
-            "followed_entities": [],
-            "streaming_chile": streaming_for("one-fight-night") if ev["is_fight_night"] else [],
-            "source": "onefc-scrape",
-            "notes": ev.get("location"),
-        })
+        importance = ["destacado"] if ev["is_fight_night"] else []
+        out.append(build_event(
+            id=f"one-{ev['slug']}",
+            sport="mma",
+            competition="ONE Championship",
+            competition_tier=tier,
+            date_utc=dt.isoformat(),
+            home=ev["title"],
+            away=None,
+            home_logo=logo,
+            away_logo=None,
+            league_logo=logo,
+            status="scheduled",
+            importance=importance,
+            followed_entities=[],
+            streaming_chile=streaming_for("one-fight-night") if ev["is_fight_night"] else [],
+            source="onefc-scrape",
+            notes=ev.get("location"),
+        ))
     return out
 
 
@@ -144,14 +214,17 @@ def normalize_espn_sports(raw, start, end):
             continue
 
         competitors = ev.get("competitions", [{}])[0].get("competitors", [])
-        home = next((c["team"]["displayName"] for c in competitors if c.get("homeAway") == "home"), None)
-        away = next((c["team"]["displayName"] for c in competitors if c.get("homeAway") == "away"), None)
-        if not home:
-            home, away = ev.get("name"), None
+        home_c = next((c for c in competitors if c.get("homeAway") == "home"), None)
+        away_c = next((c for c in competitors if c.get("homeAway") == "away"), None)
+        home = home_c["team"]["displayName"] if home_c else ev.get("name")
+        away = away_c["team"]["displayName"] if away_c else None
+        home_logo = home_c["team"].get("logo") if home_c else None
+        away_logo = away_c["team"].get("logo") if away_c else None
 
         tier = ev["_competition_tier"]
         sport = ev["_sport"]
         followed = followed_entities_in(home, away)
+        importance = importance_tags(home, away)
 
         if tier == "nba":
             streaming = nba_streaming_for(dt)
@@ -162,21 +235,24 @@ def normalize_espn_sports(raw, start, end):
 
         status = ev.get("status", {}).get("type", {}).get("description", "Scheduled")
 
-        out.append({
-            "id": f"espn-{ev['id']}",
-            "sport": sport,
-            "competition": ev["_competition_name"],
-            "competition_tier": tier,
-            "date_utc": ev["date"],
-            "home": home,
-            "away": away,
-            "status": status,
-            "importance": [],
-            "followed_entities": followed,
-            "streaming_chile": streaming,
-            "source": "espn-api",
-            "notes": None,
-        })
+        out.append(build_event(
+            id=f"espn-{ev['id']}",
+            sport=sport,
+            competition=ev["_competition_name"],
+            competition_tier=tier,
+            date_utc=ev["date"],
+            home=home,
+            away=away,
+            home_logo=home_logo,
+            away_logo=away_logo,
+            league_logo=ev.get("_league_logo"),
+            status=status,
+            importance=importance,
+            followed_entities=followed,
+            streaming_chile=streaming,
+            source="espn-api",
+            notes=None,
+        ))
     return out
 
 
@@ -190,6 +266,12 @@ def load_manual_events(start, end):
         for item in items.get("events", []):
             dt = datetime.fromisoformat(item["date_utc"].replace("Z", "+00:00"))
             if in_window(dt, start, end):
+                item.setdefault("home_logo", None)
+                item.setdefault("away_logo", None)
+                item.setdefault("league_logo", None)
+                item.setdefault("relevance_score", relevance_score(
+                    item["competition_tier"], item.get("followed_entities", []), item.get("importance", [])
+                ))
                 out.append(item)
     return out
 
@@ -202,7 +284,9 @@ def main():
     all_events += normalize_espn_sports(load_raw("espn_sports"), start, end)
     all_events += load_manual_events(start, end)
 
-    all_events.sort(key=lambda e: e["date_utc"])
+    # Orden por defecto: día, y dentro del día por relevancia (desc); el frontend puede
+    # re-ordenar por hora si el usuario prefiere.
+    all_events.sort(key=lambda e: (e["date_utc"][:10], -e["relevance_score"], e["date_utc"]))
 
     OUTPUT_PATH.write_text(
         json.dumps({
