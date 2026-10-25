@@ -26605,7 +26605,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $196",
-              "numberAvailable": 1837,
+              "numberAvailable": 1816,
               "links": [
                 {
                   "href": "https://www.vividseats.com/new-york-knicks-tickets-madison-square-garden-10-25-2026/production/7432927?wsUser=717"
@@ -30894,24 +30894,6 @@
                   "displayValue": "27.7"
                 }
               ],
-              "records": [
-                {
-                  "name": "overall",
-                  "abbreviation": "Total",
-                  "type": "total",
-                  "summary": "1-1"
-                },
-                {
-                  "name": "Home",
-                  "type": "home",
-                  "summary": "1-1"
-                },
-                {
-                  "name": "Road",
-                  "type": "road",
-                  "summary": "0-0"
-                }
-              ],
               "leaders": [
                 {
                   "name": "pointsPerGame",
@@ -31072,6 +31054,24 @@
                       }
                     }
                   ]
+                }
+              ],
+              "records": [
+                {
+                  "name": "overall",
+                  "abbreviation": "Total",
+                  "type": "total",
+                  "summary": "1-1"
+                },
+                {
+                  "name": "Home",
+                  "type": "home",
+                  "summary": "1-1"
+                },
+                {
+                  "name": "Road",
+                  "type": "road",
+                  "summary": "0-0"
                 }
               ]
             }
@@ -35652,7 +35652,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $17",
-              "numberAvailable": 2085,
+              "numberAvailable": 2069,
               "links": [
                 {
                   "href": "https://www.vividseats.com/oklahoma-city-thunder-tickets-paycom-center-10-26-2026/production/7432969?wsUser=717"
@@ -37478,7 +37478,7 @@
           "tickets": [
             {
               "summary": "Tickets as low as $9",
-              "numberAvailable": 2246,
+              "numberAvailable": 2273,
               "links": [
                 {
                   "href": "https://www.vividseats.com/utah-jazz-tickets-delta-center-10-26-2026/production/7433042?wsUser=717"
