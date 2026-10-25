@@ -37,10 +37,10 @@ Campos:
 
 ## Scripts de ingesta (cada uno escribe a `data/raw/<fuente>.json`)
 
-- `scripts/fetch_ufc.py` — API de ESPN (sin key), ya probado
-- `scripts/fetch_rugby_espn.py` — API de ESPN (sin key), ya probado
-- `scripts/fetch_one_championship.py` — scraping HTML de onefc.com/events, ya probado
-- `scripts/fetch_football.py` — API-Football (api-sports.io), necesita `API_FOOTBALL_KEY`
-- `scripts/fetch_nba.py` — balldontlie.io, necesita `BALLDONTLIE_KEY`
+Todos sin API key — 100% APIs públicas/scraping, igual que UFC.
+
+- `scripts/fetch_ufc.py` — API no oficial de ESPN
+- `scripts/fetch_one_championship.py` — scraping HTML de onefc.com/events
+- `scripts/fetch_espn_sports.py` — API no oficial de ESPN: fútbol (las 8 ligas en alcance), NBA, Euroliga y rugby (Six Nations + International Test Match), todo en un solo script
 
 `scripts/build_report.py` lee todos los `data/raw/*.json` + los archivos manuales, aplica el criterio de alcance (ligas/equipos de PLAN.md), cruza con `streaming_rules.json`, y escribe `data/today.json` con los partidos de hoy + mañana.

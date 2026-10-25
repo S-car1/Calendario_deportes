@@ -22,26 +22,14 @@ jobs:
       - name: Instalar dependencias
         run: pip install -r requirements.txt
 
-      - name: Traer UFC (sin key)
+      - name: Traer UFC
         run: python scripts/fetch_ufc.py
 
-      - name: Traer Rugby (sin key)
-        run: python scripts/fetch_rugby_espn.py
-
-      - name: Traer ONE Championship (sin key)
+      - name: Traer ONE Championship
         run: python scripts/fetch_one_championship.py
 
-      - name: Traer fútbol
-        if: ${{ secrets.API_FOOTBALL_KEY != '' }}
-        env:
-          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-        run: python scripts/fetch_football.py
-
-      - name: Traer NBA
-        if: ${{ secrets.BALLDONTLIE_KEY != '' }}
-        env:
-          BALLDONTLIE_KEY: ${{ secrets.BALLDONTLIE_KEY }}
-        run: python scripts/fetch_nba.py
+      - name: Traer fútbol + NBA + Euroliga + rugby (API ESPN, sin key)
+        run: python scripts/fetch_espn_sports.py
 
       - name: Armar data/today.json
         run: python scripts/build_report.py

@@ -127,91 +127,54 @@ def normalize_one(raw, start, end):
     return out
 
 
-def normalize_rugby(raw, start, end):
+def normalize_espn_sports(raw, start, end):
+    """Normaliza la fuente unificada (fútbol todas las ligas + NBA + Euroliga + rugby),
+    todas via la misma API no oficial de ESPN -- sin API key."""
     if not raw:
         return []
     out = []
+    seen_ids = set()
     for ev in raw["events"]:
+        if ev["id"] in seen_ids:  # mismo evento puede salir 2 veces (query por hoy y por mañana)
+            continue
+        seen_ids.add(ev["id"])
+
         dt = datetime.fromisoformat(ev["date"].replace("Z", "+00:00"))
         if not in_window(dt, start, end):
             continue
+
         competitors = ev.get("competitions", [{}])[0].get("competitors", [])
         home = next((c["team"]["displayName"] for c in competitors if c.get("homeAway") == "home"), None)
         away = next((c["team"]["displayName"] for c in competitors if c.get("homeAway") == "away"), None)
+        if not home:
+            home, away = ev.get("name"), None
+
+        tier = ev["_competition_tier"]
+        sport = ev["_sport"]
+        followed = followed_entities_in(home, away)
+
+        if tier == "nba":
+            streaming = nba_streaming_for(dt)
+        elif tier in ("rugby-tier1",) and followed:
+            streaming = streaming_for("rugby-los-condores")
+        else:
+            streaming = streaming_for(tier)
+
+        status = ev.get("status", {}).get("type", {}).get("description", "Scheduled")
+
         out.append({
-            "id": f"rugby-{ev['id']}",
-            "sport": "rugby",
-            "competition": ev.get("_league_name", "Rugby"),
-            "competition_tier": "rugby-tier1",
+            "id": f"espn-{ev['id']}",
+            "sport": sport,
+            "competition": ev["_competition_name"],
+            "competition_tier": tier,
             "date_utc": ev["date"],
-            "home": home or ev.get("name"),
+            "home": home,
             "away": away,
-            "status": "scheduled",
+            "status": status,
             "importance": [],
-            "followed_entities": followed_entities_in(home, away),
-            "streaming_chile": streaming_for("rugby-los-condores") if followed_entities_in(home, away) else [],
+            "followed_entities": followed,
+            "streaming_chile": streaming,
             "source": "espn-api",
-            "notes": None,
-        })
-    return out
-
-
-def normalize_football(raw, start, end):
-    if not raw:
-        return []
-    out = []
-    for fx in raw["fixtures"]:
-        dt = datetime.fromisoformat(fx["fixture"]["date"])
-        if not in_window(dt, start, end):
-            continue
-        home = fx["teams"]["home"]["name"]
-        away = fx["teams"]["away"]["name"]
-        comp_key = fx["_competition_key"]
-        out.append({
-            "id": f"football-{fx['fixture']['id']}",
-            "sport": "football",
-            "competition": fx["league"]["name"],
-            "competition_tier": comp_key,
-            "date_utc": fx["fixture"]["date"],
-            "home": home,
-            "away": away,
-            "status": fx["fixture"]["status"]["short"],
-            "importance": [],
-            "followed_entities": followed_entities_in(home, away),
-            "streaming_chile": streaming_for(comp_key),
-            "source": "api-football",
-            "notes": None,
-        })
-    return out
-
-
-def normalize_nba(raw, start, end):
-    if not raw:
-        return []
-    out = []
-    for g in raw["games"]:
-        # "datetime" es la hora UTC exacta; "date" es solo la fecha (YYYY-MM-DD) sin hora.
-        raw_dt = g.get("datetime") or g["date"]
-        dt = datetime.fromisoformat(raw_dt.replace("Z", "+00:00"))
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        if not in_window(dt, start, end):
-            continue
-        home = g["home_team"]["full_name"]
-        away = g["visitor_team"]["full_name"]
-        out.append({
-            "id": f"nba-{g['id']}",
-            "sport": "basketball",
-            "competition": "NBA",
-            "competition_tier": "nba",
-            "date_utc": dt.isoformat(),
-            "home": home,
-            "away": away,
-            "status": g.get("status", "scheduled"),
-            "importance": [],
-            "followed_entities": [],
-            "streaming_chile": nba_streaming_for(dt),
-            "source": "balldontlie",
             "notes": None,
         })
     return out
@@ -236,9 +199,7 @@ def main():
     all_events = []
     all_events += normalize_ufc(load_raw("ufc"), start, end)
     all_events += normalize_one(load_raw("one_championship"), start, end)
-    all_events += normalize_rugby(load_raw("rugby_espn"), start, end)
-    all_events += normalize_football(load_raw("football"), start, end)
-    all_events += normalize_nba(load_raw("nba"), start, end)
+    all_events += normalize_espn_sports(load_raw("espn_sports"), start, end)
     all_events += load_manual_events(start, end)
 
     all_events.sort(key=lambda e: e["date_utc"])
