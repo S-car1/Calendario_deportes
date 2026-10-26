@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T16:22:51.639751+00:00",
+  "generated_at": "2026-10-26T22:06:49.969785+00:00",
   "window": {
     "start": "2026-10-26T00:00:00+00:00",
     "end": "2026-10-28T00:00:00+00:00"
@@ -16,7 +16,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4139.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4129.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Scheduled",
+      "status": "Halftime",
       "importance": [],
       "followed_entities": [
         "Chile",
@@ -42,7 +42,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/243.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/97.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [
         "Sevilla"
@@ -151,7 +151,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/20.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/8.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/1.png",
-      "status": "Scheduled",
+      "status": "First Half",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -217,7 +217,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/167.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
