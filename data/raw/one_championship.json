@@ -89,6 +89,110 @@
       "is_fight_night": true
     },
     {
+      "title": "ONE Friday Fights 184 & The Inner Circle 44",
+      "slug": "one-friday-fights-184",
+      "url": "https://www.onefc.com/events/one-friday-fights-184/",
+      "utc_timestamp": 1799407800,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 51",
+      "slug": "onefightnight51",
+      "url": "https://www.onefc.com/events/onefightnight51/",
+      "utc_timestamp": 1799460000,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": true
+    },
+    {
+      "title": "ONE Friday Fights 185 & The Inner Circle 45",
+      "slug": "one-friday-fights-185",
+      "url": "https://www.onefc.com/events/one-friday-fights-185/",
+      "utc_timestamp": 1800012600,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 186 & The Inner Circle 46",
+      "slug": "one-friday-fights-186",
+      "url": "https://www.onefc.com/events/one-friday-fights-186/",
+      "utc_timestamp": 1800617400,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 187 & The Inner Circle 47",
+      "slug": "one-friday-fights-187",
+      "url": "https://www.onefc.com/events/one-friday-fights-187/",
+      "utc_timestamp": 1801222200,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 188 & The Inner Circle 48",
+      "slug": "one-friday-fights-188",
+      "url": "https://www.onefc.com/events/one-friday-fights-188/",
+      "utc_timestamp": 1802431800,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 189 & The Inner Circle 49",
+      "slug": "one-friday-fights-189",
+      "url": "https://www.onefc.com/events/one-friday-fights-189/",
+      "utc_timestamp": 1803036600,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 52",
+      "slug": "onefightnight52",
+      "url": "https://www.onefc.com/events/onefightnight52/",
+      "utc_timestamp": 1803088800,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": true
+    },
+    {
+      "title": "ONE Friday Fights 190 & The Inner Circle 50",
+      "slug": "one-friday-fights-190",
+      "url": "https://www.onefc.com/events/one-friday-fights-190/",
+      "utc_timestamp": 1803641400,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 191 & The Inner Circle 51",
+      "slug": "one-friday-fights-191",
+      "url": "https://www.onefc.com/events/one-friday-fights-191/",
+      "utc_timestamp": 1804246200,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 53",
+      "slug": "onefightnight53",
+      "url": "https://www.onefc.com/events/onefightnight53/",
+      "utc_timestamp": 1804298400,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": true
+    },
+    {
+      "title": "ONE Friday Fights 192 & The Inner Circle 52",
+      "slug": "one-friday-fights-192",
+      "url": "https://www.onefc.com/events/one-friday-fights-192/",
+      "utc_timestamp": 1804851000,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 193 & The Inner Circle 53",
+      "slug": "one-friday-fights-193",
+      "url": "https://www.onefc.com/events/one-friday-fights-193/",
+      "utc_timestamp": 1805455800,
+      "location": "Lumpinee Stadium, Bangkok",
+      "is_fight_night": false
+    },
+    {
       "title": "ONE: Qatar",
       "slug": "one-qatar",
       "url": "https://www.onefc.com/events/one-qatar/",
