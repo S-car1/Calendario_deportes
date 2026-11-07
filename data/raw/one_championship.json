@@ -1,14 +1,6 @@
 {
   "events": [
     {
-      "title": "ONE Fight Night 49: Gabriel Vs. Magomedov",
-      "slug": "onefightnight49",
-      "url": "https://www.onefc.com/events/onefightnight49/",
-      "utc_timestamp": 1794016800,
-      "location": "Lumpinee Stadium, Bangkok",
-      "is_fight_night": true
-    },
-    {
       "title": "ONE Friday Fights 178 & The Inner Circle 38",
       "slug": "one-friday-fights-178",
       "url": "https://www.onefc.com/events/one-friday-fights-178/",
@@ -87,6 +79,14 @@
       "utc_timestamp": 1806008400,
       "location": "Aspire Dome, Doha",
       "is_fight_night": false
+    },
+    {
+      "title": "ONE Fight Night 49: Gabriel Vs. Magomedov",
+      "slug": "onefightnight49",
+      "url": "https://www.onefc.com/events/onefightnight49/",
+      "utc_timestamp": 1794016800,
+      "location": null,
+      "is_fight_night": true
     },
     {
       "title": "ONE Friday Fights 177 & The Inner Circle 37",
@@ -175,14 +175,6 @@
       "utc_timestamp": 1789126200,
       "location": null,
       "is_fight_night": false
-    },
-    {
-      "title": "ONE Fight Night 47: Stamp vs. Flores on Prime Video",
-      "slug": "onefightnight47",
-      "url": "https://www.onefc.com/events/onefightnight47/",
-      "utc_timestamp": 1788570000,
-      "location": null,
-      "is_fight_night": true
     }
   ],
   "logo": "https://cdn.onefc.com/wp-content/uploads/2020/01/ONE_logo-1024-w.png"
