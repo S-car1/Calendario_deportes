@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T16:27:27.047541+00:00",
+  "generated_at": "2026-11-08T21:28:58.811807+00:00",
   "window": {
     "start": "2026-11-08T00:00:00+00:00",
     "end": "2026-11-10T00:00:00+00:00"
@@ -16,7 +16,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4139.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4133.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [
         "Chile",
@@ -42,7 +42,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7427.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2688.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [
         "Colo Colo"
@@ -117,7 +117,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/89.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Second Half",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [
         "Rayo Vallecano"
@@ -142,7 +142,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [
         "Manchester United"
@@ -167,7 +167,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Scheduled",
+      "status": "Second Half",
       "importance": [],
       "followed_entities": [
         "Barcelona"
@@ -192,7 +192,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4138.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/8186.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Halftime",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -215,7 +215,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/885.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/19195.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Halftime",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -238,7 +238,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/10144.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4134.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Scheduled",
+      "status": "Halftime",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -284,7 +284,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/chi.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phi.png",
       "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
+      "status": "In Progress",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -416,7 +416,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/85.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1538.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -439,7 +439,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2922.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -507,7 +507,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7868.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "First Half",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -530,7 +530,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/6997.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/167.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "First Half",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -553,7 +553,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3236.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/273.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "First Half",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -576,7 +576,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2697.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/174.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "First Half",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -599,7 +599,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/175.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/176.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "Scheduled",
+      "status": "Second Half",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
