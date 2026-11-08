@@ -409,6 +409,14 @@
       }
     },
     {
+      "label": "UFC Fight Night: Adesanya vs Magomedov",
+      "startDate": "2026-12-05T18:00Z",
+      "endDate": "2026-12-06T07:59Z",
+      "event": {
+        "$ref": "http://sports.core.api.espn.pvt/v2/sports/mma/leagues/ufc/events/600062700?lang=en&region=us"
+      }
+    },
+    {
       "label": "UFC 335: Oliveira vs. Lopes",
       "startDate": "2026-12-13T01:00Z",
       "endDate": "2026-12-13T07:59Z",
