@@ -1,94 +1,10 @@
 {
-  "generated_at": "2026-11-12T22:59:06.109890+00:00",
+  "generated_at": "2026-11-13T17:25:59.335622+00:00",
   "window": {
-    "start": "2026-11-12T00:00:00+00:00",
-    "end": "2026-11-14T00:00:00+00:00"
+    "start": "2026-11-13T00:00:00+00:00",
+    "end": "2026-11-15T00:00:00+00:00"
   },
   "events": [
-    {
-      "id": "espn-401909976",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-13T00:00Z",
-      "home": "Philadelphia 76ers",
-      "away": "Toronto Raptors",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phi.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/tor.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909977",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-13T00:00Z",
-      "home": "Washington Wizards",
-      "away": "Detroit Pistons",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/wsh.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909978",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-13T01:00Z",
-      "home": "Minnesota Timberwolves",
-      "away": "Dallas Mavericks",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/min.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/dal.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909979",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-13T02:00Z",
-      "home": "Phoenix Suns",
-      "away": "Charlotte Hornets",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phx.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cha.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
     {
       "id": "one-one-friday-fights-178",
       "sport": "mma",
@@ -107,6 +23,282 @@
       "source": "onefc-scrape",
       "notes": "Lumpinee Stadium, Bangkok",
       "relevance_score": 8
+    },
+    {
+      "id": "espn-604602",
+      "sport": "rugby",
+      "competition": "International Test Match",
+      "competition_tier": "rugby-tier1",
+      "date_utc": "2026-11-14T00:00Z",
+      "home": "Paraguay",
+      "away": "Brazil",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "league_logo": "https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-rugby.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [
+        "Brazil"
+      ],
+      "streaming_chile": [
+        "ESPN",
+        "Disney+"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 65
+    },
+    {
+      "id": "espn-401909296",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T00:00Z",
+      "home": "Indiana Pacers",
+      "away": "New York Knicks",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ind.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909297",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T00:00Z",
+      "home": "Orlando Magic",
+      "away": "Milwaukee Bucks",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/orl.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mil.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909298",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T01:00Z",
+      "home": "Miami Heat",
+      "away": "Cleveland Cavaliers",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909299",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T01:00Z",
+      "home": "Chicago Bulls",
+      "away": "Atlanta Hawks",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/chi.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909300",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T01:00Z",
+      "home": "New Orleans Pelicans",
+      "away": "Memphis Grizzlies",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909301",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T01:30Z",
+      "home": "Houston Rockets",
+      "away": "Utah Jazz",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909302",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T02:30Z",
+      "home": "San Antonio Spurs",
+      "away": "Golden State Warriors",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sa.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/gs.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909303",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T03:00Z",
+      "home": "Sacramento Kings",
+      "away": "Portland Trail Blazers",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401909304",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-14T03:30Z",
+      "home": "LA Clippers",
+      "away": "Oklahoma City Thunder",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lac.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401841311",
+      "sport": "football",
+      "competition": "Brasileirão",
+      "competition_tier": "brasileirao",
+      "date_utc": "2026-11-14T21:30Z",
+      "home": "Mirassol",
+      "away": "Atlético-MG",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9169.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/85.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "Kick (gratis, 2 partidos/fecha)",
+        "Zapping (señal Fanatiz 1)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 20
+    },
+    {
+      "id": "espn-401841175",
+      "sport": "football",
+      "competition": "Brasileirão",
+      "competition_tier": "brasileirao",
+      "date_utc": "2026-11-14T23:30Z",
+      "home": "Chapecoense",
+      "away": "Vasco da Gama",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9318.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/85.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "Kick (gratis, 2 partidos/fecha)",
+        "Zapping (señal Fanatiz 1)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 20
+    },
+    {
+      "id": "espn-604875",
+      "sport": "rugby",
+      "competition": "International Test Match",
+      "competition_tier": "rugby-tier1",
+      "date_utc": "2026-11-14T00:00Z",
+      "home": "Pakistan",
+      "away": "Uzbekistan",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/countries/500/pak.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "league_logo": "https://a.espncdn.com/combiner/i?img=/redesign/assets/img/icons/ESPN-icon-rugby.png",
+      "status": "Canceled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 15
     }
   ]
 }
