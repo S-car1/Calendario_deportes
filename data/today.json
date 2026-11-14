@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T16:15:33.856282+00:00",
+  "generated_at": "2026-11-14T21:49:06.490916+00:00",
   "window": {
     "start": "2026-11-14T00:00:00+00:00",
     "end": "2026-11-16T00:00:00+00:00"
@@ -16,7 +16,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9169.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7632.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/85.png",
-      "status": "Scheduled",
+      "status": "First Half",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
