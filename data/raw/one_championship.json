@@ -1,14 +1,6 @@
 {
   "events": [
     {
-      "title": "ONE SAMURAI 5",
-      "slug": "one-samurai-5",
-      "url": "https://www.onefc.com/events/one-samurai-5/",
-      "utc_timestamp": 1794990600,
-      "location": "EBARA WAVE Arena Ota, Tokyo",
-      "is_fight_night": false
-    },
-    {
       "title": "ONE Friday Fights 179 & The Inner Circle 39",
       "slug": "one-friday-fights-179",
       "url": "https://www.onefc.com/events/one-friday-fights-179/",
@@ -78,6 +70,14 @@
       "url": "https://www.onefc.com/events/one-qatar/",
       "utc_timestamp": 1806008400,
       "location": "Aspire Dome, Doha",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE SAMURAI 5",
+      "slug": "one-samurai-5",
+      "url": "https://www.onefc.com/events/one-samurai-5/",
+      "utc_timestamp": 1794990600,
+      "location": null,
       "is_fight_night": false
     },
     {
@@ -165,14 +165,6 @@
       "slug": "one-friday-fights-171",
       "url": "https://www.onefc.com/events/one-friday-fights-171/",
       "utc_timestamp": 1789731000,
-      "location": null,
-      "is_fight_night": false
-    },
-    {
-      "title": "ONE SAMURAI 3",
-      "slug": "one-samurai-3",
-      "url": "https://www.onefc.com/events/one-samurai-3/",
-      "utc_timestamp": 1789201800,
       "location": null,
       "is_fight_night": false
     }
