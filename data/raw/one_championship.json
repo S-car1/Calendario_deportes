@@ -1,14 +1,6 @@
 {
   "events": [
     {
-      "title": "ONE Friday Fights 179 & The Inner Circle 39",
-      "slug": "one-friday-fights-179",
-      "url": "https://www.onefc.com/events/one-friday-fights-179/",
-      "utc_timestamp": 1795174200,
-      "location": "Lumpinee Stadium, Bangkok",
-      "is_fight_night": false
-    },
-    {
       "title": "ONE Friday Fights 180 & The Inner Circle 40",
       "slug": "one-friday-fights-180",
       "url": "https://www.onefc.com/events/one-friday-fights-180/",
@@ -70,6 +62,14 @@
       "url": "https://www.onefc.com/events/one-qatar/",
       "utc_timestamp": 1806008400,
       "location": "Aspire Dome, Doha",
+      "is_fight_night": false
+    },
+    {
+      "title": "ONE Friday Fights 179 & The Inner Circle 39",
+      "slug": "one-friday-fights-179",
+      "url": "https://www.onefc.com/events/one-friday-fights-179/",
+      "utc_timestamp": 1795174200,
+      "location": null,
       "is_fight_night": false
     },
     {
@@ -157,14 +157,6 @@
       "slug": "one-friday-fights-172",
       "url": "https://www.onefc.com/events/one-friday-fights-172/",
       "utc_timestamp": 1790335800,
-      "location": null,
-      "is_fight_night": false
-    },
-    {
-      "title": "ONE Friday Fights 171 & The Inner Circle 31",
-      "slug": "one-friday-fights-171",
-      "url": "https://www.onefc.com/events/one-friday-fights-171/",
-      "utc_timestamp": 1789731000,
       "location": null,
       "is_fight_night": false
     }

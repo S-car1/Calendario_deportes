@@ -1,143 +1,10 @@
 {
-  "generated_at": "2026-11-20T18:09:45.164748+00:00",
+  "generated_at": "2026-11-21T17:00:30.438832+00:00",
   "window": {
-    "start": "2026-11-20T00:00:00+00:00",
-    "end": "2026-11-22T00:00:00+00:00"
+    "start": "2026-11-21T00:00:00+00:00",
+    "end": "2026-11-23T00:00:00+00:00"
   },
   "events": [
-    {
-      "id": "espn-401850692",
-      "sport": "football",
-      "competition": "Liga de Primera (Chile)",
-      "competition_tier": "liga-de-primera-chile",
-      "date_utc": "2026-11-20T21:00Z",
-      "home": "Cobresal",
-      "away": "Audax Italiano",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4133.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4138.png",
-      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "TNT Sports",
-        "HBO Max",
-        "Canal 13 (1 partido/fecha, gratis)"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 40
-    },
-    {
-      "id": "espn-401850695",
-      "sport": "football",
-      "competition": "Liga de Primera (Chile)",
-      "competition_tier": "liga-de-primera-chile",
-      "date_utc": "2026-11-20T23:30Z",
-      "home": "Palestino",
-      "away": "Unión La Calera",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4422.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/10144.png",
-      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "TNT Sports",
-        "HBO Max",
-        "Canal 13 (1 partido/fecha, gratis)"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 40
-    },
-    {
-      "id": "espn-401882805",
-      "sport": "football",
-      "competition": "LaLiga",
-      "competition_tier": "laliga",
-      "date_utc": "2026-11-20T20:00Z",
-      "home": "Athletic Club",
-      "away": "Espanyol",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/93.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/88.png",
-      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "ESPN",
-        "DGO",
-        "Disney+ Premium"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 25
-    },
-    {
-      "id": "espn-401933760",
-      "sport": "football",
-      "competition": "Liga Profesional Argentina",
-      "competition_tier": "liga-profesional-argentina",
-      "date_utc": "2026-11-20T23:00Z",
-      "home": "Vélez Sarsfield",
-      "away": "Belgrano (Córdoba)",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/21.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4.png",
-      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/1.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "ESPN",
-        "Disney+"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 20
-    },
-    {
-      "id": "espn-401876395",
-      "sport": "football",
-      "competition": "Ligue 1",
-      "competition_tier": "ligue-1",
-      "date_utc": "2026-11-20T19:45Z",
-      "home": "Troyes",
-      "away": "Le Havre AC",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/170.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3236.png",
-      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "ESPN",
-        "DGO",
-        "Disney+ Premium"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 18
-    },
-    {
-      "id": "one-one-friday-fights-179",
-      "sport": "mma",
-      "competition": "ONE Championship",
-      "competition_tier": "one-friday-fights",
-      "date_utc": "2026-11-20T11:30:00+00:00",
-      "home": "ONE Friday Fights 179 & The Inner Circle 39",
-      "away": null,
-      "home_logo": "https://cdn.onefc.com/wp-content/uploads/2020/01/ONE_logo-1024-w.png",
-      "away_logo": null,
-      "league_logo": "https://cdn.onefc.com/wp-content/uploads/2020/01/ONE_logo-1024-w.png",
-      "status": "scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [],
-      "source": "onefc-scrape",
-      "notes": "Lumpinee Stadium, Bangkok",
-      "relevance_score": 8
-    },
     {
       "id": "espn-401850696",
       "sport": "football",
@@ -201,7 +68,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/382.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/370.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [
         "Manchester City"
@@ -226,7 +93,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/363.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/357.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [
         "Chelsea"
@@ -251,7 +118,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/101.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/94.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Scheduled",
+      "status": "Second Half",
       "importance": [],
       "followed_entities": [
         "Rayo Vallecano"
@@ -375,7 +242,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/8186.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4129.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
-      "status": "Scheduled",
+      "status": "Second Half",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -409,195 +276,6 @@
       "source": "espn-api",
       "notes": null,
       "relevance_score": 40
-    },
-    {
-      "id": "espn-401909305",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T00:00Z",
-      "home": "Atlanta Hawks",
-      "away": "Charlotte Hornets",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cha.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909306",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T00:30Z",
-      "home": "Brooklyn Nets",
-      "away": "Orlando Magic",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bkn.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/orl.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909307",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T00:30Z",
-      "home": "Cleveland Cavaliers",
-      "away": "Indiana Pacers",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/cle.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ind.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909308",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T00:30Z",
-      "home": "Detroit Pistons",
-      "away": "Toronto Raptors",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/tor.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909309",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T01:00Z",
-      "home": "Chicago Bulls",
-      "away": "Washington Wizards",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/chi.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/wsh.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909310",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T01:00Z",
-      "home": "Oklahoma City Thunder",
-      "away": "New Orleans Pelicans",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909311",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T02:30Z",
-      "home": "Utah Jazz",
-      "away": "Phoenix Suns",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/utah.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/phx.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909312",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T03:00Z",
-      "home": "Denver Nuggets",
-      "away": "Houston Rockets",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/den.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/hou.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
-    },
-    {
-      "id": "espn-401909313",
-      "sport": "basketball",
-      "competition": "NBA",
-      "competition_tier": "nba",
-      "date_utc": "2026-11-21T03:00Z",
-      "home": "Los Angeles Lakers",
-      "away": "Sacramento Kings",
-      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lal.png",
-      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
-      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
-      "status": "Scheduled",
-      "importance": [],
-      "followed_entities": [],
-      "streaming_chile": [
-        "HBO Max"
-      ],
-      "source": "espn-api",
-      "notes": null,
-      "relevance_score": 35
     },
     {
       "id": "espn-401910023",
@@ -652,7 +330,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/96.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/90.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -675,7 +353,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/349.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/393.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -698,7 +376,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/362.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/366.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -721,7 +399,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/388.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/384.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -744,7 +422,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/367.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/373.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
-      "status": "Scheduled",
+      "status": "Full Time",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -833,7 +511,7 @@
       "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2502.png",
       "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/160.png",
       "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
-      "status": "Scheduled",
+      "status": "First Half",
       "importance": [],
       "followed_entities": [],
       "streaming_chile": [
@@ -955,6 +633,574 @@
       "source": "espn-api",
       "notes": null,
       "relevance_score": 15
+    },
+    {
+      "id": "espn-401878755",
+      "sport": "football",
+      "competition": "Premier League",
+      "competition_tier": "premier-league",
+      "date_utc": "2026-11-22T16:30Z",
+      "home": "Liverpool",
+      "away": "Manchester United",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/364.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/360.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
+      "status": "Scheduled",
+      "importance": [
+        "Clásico"
+      ],
+      "followed_entities": [
+        "Liverpool",
+        "Manchester United"
+      ],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 155
+    },
+    {
+      "id": "espn-401850693",
+      "sport": "football",
+      "competition": "Liga de Primera (Chile)",
+      "competition_tier": "liga-de-primera-chile",
+      "date_utc": "2026-11-22T21:00Z",
+      "home": "Colo Colo",
+      "away": "Universidad Católica",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2688.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/885.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
+      "status": "Scheduled",
+      "importance": [
+        "Clásico"
+      ],
+      "followed_entities": [
+        "Colo Colo"
+      ],
+      "streaming_chile": [
+        "TNT Sports",
+        "HBO Max",
+        "Canal 13 (1 partido/fecha, gratis)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 145
+    },
+    {
+      "id": "espn-401882804",
+      "sport": "football",
+      "competition": "LaLiga",
+      "competition_tier": "laliga",
+      "date_utc": "2026-11-22T13:00Z",
+      "home": "Barcelona",
+      "away": "Villarreal",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/83.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/102.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [
+        "Barcelona"
+      ],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 75
+    },
+    {
+      "id": "espn-401933761",
+      "sport": "football",
+      "competition": "Liga Profesional Argentina",
+      "competition_tier": "liga-profesional-argentina",
+      "date_utc": "2026-11-22T22:00Z",
+      "home": "River Plate",
+      "away": "Lanús",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/16.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/12.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/1.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [
+        "River Plate"
+      ],
+      "streaming_chile": [
+        "ESPN",
+        "Disney+"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 70
+    },
+    {
+      "id": "espn-401850697",
+      "sport": "football",
+      "competition": "Liga de Primera (Chile)",
+      "competition_tier": "liga-de-primera-chile",
+      "date_utc": "2026-11-22T15:00Z",
+      "home": "Huachipato",
+      "away": "Deportes Concepcion",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4134.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/8110.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "TNT Sports",
+        "HBO Max",
+        "Canal 13 (1 partido/fecha, gratis)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 40
+    },
+    {
+      "id": "espn-401850698",
+      "sport": "football",
+      "competition": "Liga de Primera (Chile)",
+      "competition_tier": "liga-de-primera-chile",
+      "date_utc": "2026-11-22T23:30Z",
+      "home": "Deportes Limache",
+      "away": "La Serena",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/19195.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4137.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/86.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "TNT Sports",
+        "HBO Max",
+        "Canal 13 (1 partido/fecha, gratis)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 40
+    },
+    {
+      "id": "espn-401910024",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-22T00:30Z",
+      "home": "New York Knicks",
+      "away": "Portland Trail Blazers",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/ny.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/por.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401910025",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-22T01:00Z",
+      "home": "Dallas Mavericks",
+      "away": "LA Clippers",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/dal.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/lac.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401910026",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-22T01:00Z",
+      "home": "Minnesota Timberwolves",
+      "away": "Memphis Grizzlies",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/min.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mem.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401910027",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-22T01:00Z",
+      "home": "San Antonio Spurs",
+      "away": "New Orleans Pelicans",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sa.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/no.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401910028",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-22T03:00Z",
+      "home": "Sacramento Kings",
+      "away": "Boston Celtics",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/sac.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/bos.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401910029",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-22T20:30Z",
+      "home": "Atlanta Hawks",
+      "away": "Detroit Pistons",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/atl.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/det.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401910030",
+      "sport": "basketball",
+      "competition": "NBA",
+      "competition_tier": "nba",
+      "date_utc": "2026-11-22T23:00Z",
+      "home": "Miami Heat",
+      "away": "Oklahoma City Thunder",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/mia.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/nba/500/scoreboard/okc.png",
+      "league_logo": "https://a.espncdn.com/i/teamlogos/leagues/500/nba.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "HBO Max"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 35
+    },
+    {
+      "id": "espn-401879234",
+      "sport": "football",
+      "competition": "Premier League",
+      "competition_tier": "premier-league",
+      "date_utc": "2026-11-22T14:00Z",
+      "home": "Hull City",
+      "away": "Brighton & Hove Albion",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/306.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/331.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/23.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 25
+    },
+    {
+      "id": "espn-401882800",
+      "sport": "football",
+      "competition": "LaLiga",
+      "competition_tier": "laliga",
+      "date_utc": "2026-11-22T15:15Z",
+      "home": "Racing Santander",
+      "away": "Real Sociedad",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/87.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/89.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 25
+    },
+    {
+      "id": "espn-401882801",
+      "sport": "football",
+      "competition": "LaLiga",
+      "competition_tier": "laliga",
+      "date_utc": "2026-11-22T17:30Z",
+      "home": "Osasuna",
+      "away": "Málaga",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/97.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/99.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 25
+    },
+    {
+      "id": "espn-401882803",
+      "sport": "football",
+      "competition": "LaLiga",
+      "competition_tier": "laliga",
+      "date_utc": "2026-11-22T20:00Z",
+      "home": "Getafe",
+      "away": "Atlético Madrid",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2922.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/1068.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/15.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 25
+    },
+    {
+      "id": "espn-401841325",
+      "sport": "football",
+      "competition": "Brasileirão",
+      "competition_tier": "brasileirao",
+      "date_utc": "2026-11-22T00:00Z",
+      "home": "Chapecoense",
+      "away": "Cruzeiro",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9318.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2022.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/85.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "Kick (gratis, 2 partidos/fecha)",
+        "Zapping (señal Fanatiz 1)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 20
+    },
+    {
+      "id": "espn-401933759",
+      "sport": "football",
+      "competition": "Liga Profesional Argentina",
+      "competition_tier": "liga-profesional-argentina",
+      "date_utc": "2026-11-22T19:00Z",
+      "home": "Rosario Central",
+      "away": "Gimnasia (Mendoza)",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/17.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11972.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/1.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "Disney+"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 20
+    },
+    {
+      "id": "espn-401841318",
+      "sport": "football",
+      "competition": "Brasileirão",
+      "competition_tier": "brasileirao",
+      "date_utc": "2026-11-22T19:00Z",
+      "home": "Athletico-PR",
+      "away": "Remo",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3458.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/4936.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/85.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "Kick (gratis, 2 partidos/fecha)",
+        "Zapping (señal Fanatiz 1)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 20
+    },
+    {
+      "id": "espn-401841324",
+      "sport": "football",
+      "competition": "Brasileirão",
+      "competition_tier": "brasileirao",
+      "date_utc": "2026-11-22T21:30Z",
+      "home": "Fluminense",
+      "away": "Mirassol",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3445.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/9169.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/85.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "Kick (gratis, 2 partidos/fecha)",
+        "Zapping (señal Fanatiz 1)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 20
+    },
+    {
+      "id": "espn-401841321",
+      "sport": "football",
+      "competition": "Brasileirão",
+      "competition_tier": "brasileirao",
+      "date_utc": "2026-11-22T22:30Z",
+      "home": "Red Bull Bragantino",
+      "away": "Vasco da Gama",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/6079.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/3454.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/85.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "Kick (gratis, 2 partidos/fecha)",
+        "Zapping (señal Fanatiz 1)"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 20
+    },
+    {
+      "id": "espn-401876397",
+      "sport": "football",
+      "competition": "Ligue 1",
+      "competition_tier": "ligue-1",
+      "date_utc": "2026-11-22T14:00Z",
+      "home": "Paris FC",
+      "away": "Angers",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/6851.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/7868.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 18
+    },
+    {
+      "id": "espn-401876401",
+      "sport": "football",
+      "competition": "Ligue 1",
+      "competition_tier": "ligue-1",
+      "date_utc": "2026-11-22T16:15Z",
+      "home": "Lorient",
+      "away": "Stade Rennais",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/273.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/169.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 18
+    },
+    {
+      "id": "espn-401876400",
+      "sport": "football",
+      "competition": "Ligue 1",
+      "competition_tier": "ligue-1",
+      "date_utc": "2026-11-22T19:45Z",
+      "home": "Marseille",
+      "away": "Le Mans",
+      "home_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/176.png",
+      "away_logo": "https://a.espncdn.com/i/teamlogos/soccer/500/2697.png",
+      "league_logo": "https://a.espncdn.com/i/leaguelogos/soccer/500/9.png",
+      "status": "Scheduled",
+      "importance": [],
+      "followed_entities": [],
+      "streaming_chile": [
+        "ESPN",
+        "DGO",
+        "Disney+ Premium"
+      ],
+      "source": "espn-api",
+      "notes": null,
+      "relevance_score": 18
     }
   ]
 }
